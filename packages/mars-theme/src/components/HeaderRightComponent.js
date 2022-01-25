@@ -1,0 +1,168 @@
+import React from 'react';
+import { styled, connect } from "frontity"
+import Link from "./Link";
+import { Col, Row } from 'reactstrap';
+import { FaPhoneAlt } from 'react-icons/fa';
+import { GoMailRead } from 'react-icons/go';
+
+const HeaderRightComponent = ({ state }) => {
+    const items = state.source.get(`/menu/${state.theme.menuUrl}`).items;
+
+    return (
+        <HeaderRight className="col-lg-9">
+            <ul className="top-info-box">
+                <li>
+                    <div className="info-box">
+                        <div className="info-box-content">
+                            <p className="info-box-title"><FaPhoneAlt /> Call Us</p>
+                            <p className="info-box-subtitle"><a href="tel:+442882243977">(+44) 028 8224 3977</a></p>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div className="info-box">
+                        <div className="info-box-content">
+                            <p className="info-box-title"><GoMailRead /> Email Us</p>
+                            <p className="info-box-subtitle"><a href="mailto:john@jmkcctv.com">john@jmkcctv.com</a></p>
+                        </div>
+                    </div>
+                </li>
+                <li className="last">
+                    <div className="info-box last">
+                        <div className="info-box-content">
+                            <img src="https://jmksecurity.s3.eu-west-2.amazonaws.com/NICEIC-approvedcontractor.svg" alt="NIC EIC Approved Contractor logo" />
+                        </div>
+                    </div>
+                </li>
+                <li className="header-get-a-quote">
+                    {items.map((item) =>
+                        item.url.includes('contact-us') && <Link key={item.ID} link={item.url} title="Request a free survey" className="btn btn-primary">Request A <br />Free Survey</Link>
+                    )}
+                </li>
+            </ul>
+        </HeaderRight>
+
+    )
+}
+
+const HeaderRight = styled.div`
+    float: right;
+
+    ul.top-info-box {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        float: right;
+
+        li {
+            position: relative;
+            float: left;
+            margin-left: 0;
+            border-right: 1px solid #dedede;
+            border-right: 1px solid rgba(0, 0, 0, 0.1);
+            padding-right: 25px;
+            margin-right: 25px;
+
+            .info-box {
+                span.info-icon {
+                    font-size: 20px;
+                    display: inline-block;
+                    text-align: center;
+                    margin: 2px 5px 0 0;
+                    position: relative;
+                  }
+                  
+                  .info-box-content {
+                    display: inline-block;
+                    font-family: $font-secondary;
+                    -webkit-flex-direction: column;
+                    -ms-flex-direction: column;
+                    flex-direction: column;
+                  }
+                  
+                  .info-box-title {
+                    font-size: 14px;
+                    margin-bottom: 8px;
+                    line-height: normal;
+                  }
+                  
+                  .info-box-subtitle {
+                    margin: 0;
+                    line-height: normal;
+                    font-size: 15px;
+                    font-weight: 700;
+                    color: #111;
+                  }
+            }
+              
+              
+        }
+
+        @media (max-width: 767px) {
+            li {
+              border: 0;
+              text-align: center;
+              margin: 0;
+              padding: 0 20px;
+              margin-top: 10px;
+            }
+        }
+
+        @media (max-width: 400px) {
+            li {
+              border: 0;
+              text-align: center;
+              margin: 0;
+              flex: 0 0 100%;
+              margin-top: 15px;
+            }
+        }
+
+        li:last-child {
+            margin-right: 0;
+            padding-right: 0;
+            border-right: 0;
+        }
+
+        li.last {
+            border-right: 0;
+        }
+    }
+
+    @media (max-width: 767px) {
+        ul.top-info-box {
+          display: flex;
+          justify-content: center;
+          flex-wrap: wrap;
+          align-items: center;
+        }
+    }
+
+    .header-get-a-quote .btn-primary {
+        padding: 12px 25px !important;
+        font-size: 13px;
+        border-radius: 3px;
+        line-height: normal;
+        text-transform: capitalize;
+        color: #fff;
+        margin-top: 5px;
+        @media (max-width: 1200px) {
+          padding: 12px !important;
+        }
+        @media (max-width: 991px) {
+          padding: 12px 30px !important;
+        }
+      }
+      
+      .header-get-a-quote .btn-primary:hover {
+        background: #272d33;
+        color: $color-primary !important;
+      }
+      
+      ul.navbar-nav>li.header-get-a-quote:hover>a:after {
+        position: relative;
+        content: no-close-quote;
+      }
+`
+
+export default connect(HeaderRightComponent);
