@@ -19,10 +19,19 @@ const MainHeaderComponent = ({ children }) => {
 
 const LogoArea = styled.div`
     padding: 30px 0;  
+
+    @media (max-width: 568px) {
+        padding: 10px 0;
+    }
     
     img {
         width: auto;
         max-height: 65px;
+
+        @media (max-width: 767px) {
+            max-height: 50px;
+        }
+        transition: max-height 300ms ease;
     }
 
     @media (max-width: 991px) {

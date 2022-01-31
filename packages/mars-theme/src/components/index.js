@@ -4,11 +4,12 @@ import Switch from "@frontity/components/switch";
 import Link from "./Link";
 import List from "./list";
 import Post from "./Post";
+import Sticky from 'react-stickky';
+
+// Components
 import Loading from "./Loading";
 import Title from "./Title";
 import PageError from "./Page-Error";
-
-// Components
 import TopBarEl from "./TopBar";
 import HeaderComponent from "./HeaderComponent";
 import MainHeaderComponent from "./MainHeader";
@@ -28,6 +29,7 @@ import FooterServices from './FooterServices';
  *
  * @returns The top-level react component representing the theme.
  */
+
 const Theme = ({ state }) => {
   // Get information about the current URL.
   const data = state.source.get(state.router.link);
@@ -50,13 +52,15 @@ const Theme = ({ state }) => {
       {/* Add the header of the site. */}
       <div className="body-inner">
         <TopBarEl />
-        <HeaderComponent>
-          <MainHeaderComponent>
-            <HeaderRightComponent />
-          </MainHeaderComponent>
-          <MobileMenu />
-        </HeaderComponent>
-        <Nav />
+        <Sticky className="stickyStyle">
+          <HeaderComponent>
+            <MainHeaderComponent>
+              <HeaderRightComponent />
+            </MainHeaderComponent>
+            <MobileMenu />
+          </HeaderComponent>
+          <Nav />
+        </Sticky>
         <Main>
           <Switch>
             <Loading when={data.isFetching} />
@@ -80,21 +84,6 @@ const Theme = ({ state }) => {
 };
 
 export default connect(Theme);
-
-const Container = styled.div`
-  width: 848px;
-  max-width: 100%;
-  box-sizing: border-box;
-  padding: 24px;
-  color: #000;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-`;
-
-const StyledLink = styled(Link)`
-  text-decoration: none;
-`;
 
 const Main = styled.main`
   max-width: 1250px;
@@ -459,4 +448,18 @@ a[href^=tel] {
   color: inherit;
   text-decoration: none;
 }
+
+.stickyStyle {
+  top: 0 !important;
+
+  .container > div:not(.row) {
+      padding: 10px 0 !important;
+      transition: padding 300ms ease;
+  }
+  
+  img {
+    max-height: 45px !important;
+  }
+}
 `;
+

@@ -27,8 +27,6 @@ const FooterCopyright = ({ state }) => {
                         </div>
                     </Col>
                 </Row>
-
-
             </Container>
         </Copyright>
     )

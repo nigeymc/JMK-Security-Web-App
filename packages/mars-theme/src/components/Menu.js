@@ -12,7 +12,7 @@ import MenuModal from "./Menu-Modal";
  */
 function MobileMenu({ state, actions }) {
   const { menuUrl, isMobileMenuOpen } = state.theme;
-  if (menuUrl?.length === 0) return null;
+  if (menuUrl.length === 0) return null;
 
   return state.frontity.mode === "amp" ? (
     <>

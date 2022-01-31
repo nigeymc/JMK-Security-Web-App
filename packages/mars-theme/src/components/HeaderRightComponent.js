@@ -14,7 +14,7 @@ const HeaderRightComponent = ({ state }) => {
                 <li>
                     <div className="info-box">
                         <div className="info-box-content">
-                            <p className="info-box-title"><FaPhoneAlt /> Call Us</p>
+                            <p className="info-box-title"><FaPhoneAlt /> <span>Call Us</span></p>
                             <p className="info-box-subtitle"><a href="tel:+442882243977">(+44) 028 8224 3977</a></p>
                         </div>
                     </div>
@@ -22,7 +22,7 @@ const HeaderRightComponent = ({ state }) => {
                 <li>
                     <div className="info-box">
                         <div className="info-box-content">
-                            <p className="info-box-title"><GoMailRead /> Email Us</p>
+                            <p className="info-box-title"><GoMailRead /> <span>Email Us</span></p>
                             <p className="info-box-subtitle"><a href="mailto:john@jmkcctv.com">john@jmkcctv.com</a></p>
                         </div>
                     </div>
@@ -47,6 +47,10 @@ const HeaderRightComponent = ({ state }) => {
 
 const HeaderRight = styled.div`
     float: right;
+
+    @media (max-width: 740px) and (orientation: landscape) {
+        display: none;
+    }
 
     ul.top-info-box {
         list-style: none;
@@ -78,12 +82,27 @@ const HeaderRight = styled.div`
                     -webkit-flex-direction: column;
                     -ms-flex-direction: column;
                     flex-direction: column;
+
+                    @media (max-width: 400px) {
+                        display: flex;
+                        flex-direction: row;
+                        justify-content: center;
+                    }
                   }
                   
                   .info-box-title {
                     font-size: 14px;
                     margin-bottom: 8px;
                     line-height: normal;
+
+                    @media (max-width: 400px) {
+                        span {
+                            display: none;
+                        }
+
+                        width: 10%;
+                        text-align: left;
+                    }
                   }
                   
                   .info-box-subtitle {
@@ -126,6 +145,9 @@ const HeaderRight = styled.div`
 
         li.last {
             border-right: 0;
+            @media (max-width: 400px) {
+                display: none;
+            }
         }
     }
 
@@ -151,6 +173,9 @@ const HeaderRight = styled.div`
         }
         @media (max-width: 991px) {
           padding: 12px 30px !important;
+        }
+        @media (max-width: 400px) {
+            display: none;
         }
       }
       
