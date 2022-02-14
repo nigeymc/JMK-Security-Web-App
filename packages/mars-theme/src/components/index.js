@@ -1,5 +1,5 @@
 import bootstrapGlobalStyles from 'bootstrap/dist/css/bootstrap.min.css';
-import { css, connect, styled, Head, Global } from "frontity";
+import { css, connect, styled, Head, Global, decode } from "frontity";
 import Switch from "@frontity/components/switch";
 import Link from "./Link";
 import List from "./list";
@@ -20,6 +20,7 @@ import FooterContainer from './FooterContainer';
 import FooterAboutUs from './FooterAboutUs';
 import FooterAddress from './FooterAddress';
 import FooterServices from './FooterServices';
+import HeroBanner from './HeroBanner';
 
 /**
  * Theme is the root React component of our theme. The one we will export
@@ -33,6 +34,8 @@ import FooterServices from './FooterServices';
 const Theme = ({ state }) => {
   // Get information about the current URL.
   const data = state.source.get(state.router.link);
+  const postTitle = state.source[data.type][data.id].title.rendered;
+  const cleanTitle = decode(postTitle);
 
   return (
     <>
@@ -61,6 +64,7 @@ const Theme = ({ state }) => {
           </HeaderComponent>
           <Nav />
         </Sticky>
+        {cleanTitle.includes("Homepage") ? <HeroBanner image={`https://jmksecurity.s3.eu-west-2.amazonaws.com/omagh-banner.jpeg`} /> : null}
         <Main>
           <Switch>
             <Loading when={data.isFetching} />
@@ -111,7 +115,7 @@ const globalStyles = css`
 
 body {
   background: #fff;
-  color: #555;
+  color: #334050;
 }
 
 body,
@@ -129,7 +133,7 @@ h3,
 h4,
 h5,
 h6 {
-  color: #212121;
+  color: #334050;
   font-weight: 700;
   font-family: 'Montserrat', sans-serif;
   text-rendering: optimizeLegibility;
@@ -211,21 +215,6 @@ a:visited {
 a {
   color: inherit;
   transition: .2s ease;
-}
-
-a:hover {
-  text-decoration: none;
-  color: #000;
-}
-
-a.read-more {
-  color: #ffb600;
-  font-weight: 700;
-  text-transform: uppercase;
-}
-
-a.read-more:hover {
-  color: #222;
 }
 
 section,
@@ -368,7 +357,6 @@ a[href^=tel] {
   text-decoration: none;
 }
 
-// Button
 .btn:active, .btn:focus {
   box-shadow: none !important;
 }
@@ -377,7 +365,7 @@ a[href^=tel] {
 .btn-dark {
   border: 0;
   border-radius: 3px;
-  padding: 12px 20px 10px;
+  padding: 15px 30px 10px 20px;
   font-weight: 700;
   text-transform: uppercase;
   color: #fff;
@@ -393,13 +381,26 @@ a[href^=tel] {
   }
 }
 
-.btn-white.btn-primary {
-  background: #fff;
-  color: #ffb600;
-}
-
 .btn-primary {
-  background: #ED512B;
+  background: #ED532B;
+
+    a {
+      color: #fff;
+      text-decoration: none;
+      position: relative;
+
+        &:after {
+          content: "";
+          width: 16px;
+          height: 20px;
+          background-image: url('https://jmksecurity.s3.eu-west-2.amazonaws.com/button-right-white.svg');
+          background-size: contain;
+          background-position: center;
+          position: absolute;
+          top: -1px;
+          right: -17px;
+        }
+    }
 }
 
 .btn-dark {
@@ -407,9 +408,8 @@ a[href^=tel] {
 }
 
 .btn-primary:hover,
-.btn-dark:hover,
-.btn-white.btn-primary:hover {
-  background: #111;
+.btn-dark:hover {
+  background: #334050;
   color: #fff;
 }
 
@@ -461,5 +461,6 @@ a[href^=tel] {
     max-height: 45px !important;
   }
 }
+
 `;
 

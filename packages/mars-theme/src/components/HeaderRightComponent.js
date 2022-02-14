@@ -110,7 +110,14 @@ const HeaderRight = styled.div`
                     line-height: normal;
                     font-size: 15px;
                     font-weight: 700;
-                    color: #111;
+
+                    a {
+                        color: #334050;
+
+                        &:hover {
+                            color: #334050;
+                        }
+                    }
                   }
             }
               
@@ -180,7 +187,7 @@ const HeaderRight = styled.div`
       }
       
       .header-get-a-quote .btn-primary:hover {
-        background: #272d33;
+        background: #334050;
         color: $color-primary !important;
       }
       

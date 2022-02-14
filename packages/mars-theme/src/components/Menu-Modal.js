@@ -54,14 +54,14 @@ const MenuOverlay = styled.div`
   height: 100vh;
   overflow: hidden auto;
   position: fixed;
-  z-index: 2;
+  z-index: 999;
   top: 0;
   left: 0;
   display: flex;
 `;
 
 const MenuContent = styled.div`
-  z-index: 3;
+  z-index: 999;
   position: absolute;
   top: -40px;
   width: 65vw;
