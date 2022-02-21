@@ -106,7 +106,7 @@ const Main = styled.main`
   }
   figcaption {
     color: #828282;
-    font-size: 0.8em;
+    font-size: 0.9em;
     margin-bottom: 1em;
   }
 `
@@ -138,6 +138,10 @@ h6 {
   font-family: 'Montserrat', sans-serif;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased !important;
+}
+
+header.stickyStyle + main, header.stickyStyle + div {
+  margin-top: 160px;
 }
 
 h1 {
@@ -361,17 +365,20 @@ a[href^=tel] {
   box-shadow: none !important;
 }
 
-.btn-primary,
-.btn-dark {
+.btn-primary {
   border: 0;
   border-radius: 3px;
-  padding: 15px 30px 10px 20px;
+  padding: 15px 30px 15px 20px;
   font-weight: 700;
   text-transform: uppercase;
   color: #fff;
   font-family: "Montserrat", sans-serif;
   transition: 350ms;
   font-size: 14px;
+}
+
+.btn-white {
+  padding: 15px 30px 10px 20px;
 }
 
 @media (max-width: 767px) {

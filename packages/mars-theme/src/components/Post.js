@@ -138,6 +138,234 @@ const Content = styled.div`
   display: flex;
   flex-flow: column;
 
+    h3 {
+      color: rgb(51, 64, 80, 1);
+      position: relative;
+      text-align: center;
+      height: 130px;
+      padding-top: 75px;
+
+        @media (max-width: 893px) and (min-width: 768px) {
+          margin-bottom: 40px;
+        }
+    }
+
+    h3#intruder-alarm-systems, h3#security-lighting, h3#electrical-services, #cctv-systems, h3#access-control-systems, h3#maintenance {
+      &:before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 10px;
+        width: 100%;
+        height: 50px;
+        background-size: contain;
+        background-position: center;
+        background-repeat: no-repeat;
+        z-index: 1;
+      }
+    }
+
+    h3#cctv-commercial, h3#cctv-domestic, h3#cctv-site-rental {
+      &:before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 10px;
+        width: 100%;
+        height: 50px;
+        background-size: contain;
+        background-position: 30% center;
+        background-repeat: no-repeat;
+        z-index: 1;
+      }
+    }
+
+    h3#cctv-commercial, h3#cctv-domestic, h3#cctv-site-rental {
+      &:after {
+        content: "";
+        position: absolute;
+        right: 0;
+        top: 10px;
+        width: 100%;
+        height: 50px;
+        background-size: contain;
+        background-position: 70% center;
+        background-repeat: no-repeat;
+        z-index: 1;
+      }
+    }
+
+    h3#cctv-commercial, h3#cctv-domestic, h3#cctv-site-rental {
+      &:before {
+        background-image: url('https://jmksecurity.s3.eu-west-2.amazonaws.com/icon-cctv.svg');
+      }
+    }
+
+    h3#cctv-commercial {
+      &:after {
+        background-image: url('https://jmksecurity.s3.eu-west-2.amazonaws.com/icon-commercial.svg');
+      }
+    }
+
+    h3#cctv-domestic {
+      &:after {
+        background-image: url('https://jmksecurity.s3.eu-west-2.amazonaws.com/icon-domestic.svg');
+      }
+    }
+
+    h3#cctv-site-rental {
+      &:after {
+        background-image: url('https://jmksecurity.s3.eu-west-2.amazonaws.com/icon-site-rental.svg');
+      }
+    }
+
+    h3#intruder-alarm-systems {
+      &:before {
+        background-image: url('https://jmksecurity.s3.eu-west-2.amazonaws.com/icon-intruder-alarms.svg');
+      }
+    }
+
+    h3#security-lighting {
+      &:before {
+        background-image: url('https://jmksecurity.s3.eu-west-2.amazonaws.com/icon-security-lighting.svg');
+      }
+    }
+
+    h3#electrical-services {
+      &:before {
+        background-image: url('https://jmksecurity.s3.eu-west-2.amazonaws.com/icon-electrial-services.svg');
+      }
+    }
+
+    h3#cctv-systems {
+      &:before {
+        background-image: url('https://jmksecurity.s3.eu-west-2.amazonaws.com/icon-cctv.svg');
+      }
+    }
+
+    h3#access-control-systems {
+      &:before {
+        background-image: url('https://jmksecurity.s3.eu-west-2.amazonaws.com/icon-access-control.svg');
+      }
+    }
+
+    h3#maintenance {
+      &:before {
+        background-image: url('https://jmksecurity.s3.eu-west-2.amazonaws.com/icon-maintenance.svg');
+      }
+    }
+
+    .services-sub-page {
+      display: flex;
+
+        @media (max-width: 992px) {
+          flex-flow: column;
+        }
+
+        .image-wrapper {
+          display: flex;
+          flex-flow: column;
+        }
+
+        ul {
+          padding-left: 0;
+
+            li {
+              line-height: 1.6em;
+              font-size: 1.2em;
+              padding: 0 25px 0 0;
+              list-style: none;
+              font-weight: 500;
+              margin-bottom: 15px;
+              padding-left: 50px;
+              position: relative;
+
+                &:before {
+                  content: "";
+                  width: 40px;
+                  height: 40px;
+                  background-image: url(https://jmksecurity.s3.eu-west-2.amazonaws.com/icon-check-shield.svg);
+                  background-repeat: no-repeat;
+                  -webkit-background-size: contain;
+                  background-size: contain;
+                  -webkit-background-position: center;
+                  background-position: center;
+                  position: absolute;
+                  top: 10px;
+                  left: 0;
+                }
+            }
+        }
+    }
+
+    
+
+  .h2-wrapper {
+    background-color: rgb(237, 83, 43, 1);
+    padding: 1em;
+    margin: 25px 0;
+
+      h2.intro-title {
+        font-weight: 900;
+        text-transform: uppercase;
+        font-size: 32px;
+        line-height: normal;
+        color: #fff;
+        margin: 0;
+      }
+    
+      h2.intro-sub-title {
+        font-weight: 300;
+        text-transform: uppercase;
+        font-size: 18px;
+        line-height: normal;
+        margin: 0;
+        color: #fff;
+      }
+  }
+
+    .banner-container {
+      display: flex;
+      flex-flow: row;
+
+        p {
+          padding: 45px 15px 25px;
+        }
+
+        .wp-block-buttons {
+          margin-left: 15px;
+        }
+      
+      @media (max-width: 992px) {
+        flex-flow: column;
+
+          .banner {
+            order: 1;
+          }
+
+          div:not(.banner) {
+            order: 2;
+          }
+      }
+
+      .banner {
+        min-height: 350px;
+        background-image: url(http://wp.jmksecurity.net/wp-content/uploads/2022/02/towers_banner_no_logo.png);
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center center;
+
+          @media (max-width: 768px) {
+            background-position: 80% center;
+          }
+
+          @media (max-width: 718px) {
+            background-position: 80% center;
+          }
+        
+      }
+    }
+
     p {
       line-height: 1.6em;
       font-size: 1.2em;
@@ -159,7 +387,8 @@ const Content = styled.div`
       width: 100%;
 
       figcaption {
-        font-size: 0.7em;
+        font-size: 1.1em;
+        line-height: 1.5;
       }
     }
 
@@ -213,64 +442,7 @@ const Content = styled.div`
           flex: 1;
           padding: 10px;
           display: flex;
-          flex-flow: column;
-
-            h3 {
-              color: rgb(51, 64, 80, 1);
-              position: relative;
-              text-align: center;
-              height: 130px;
-              padding-top: 75px;
-
-                @media (max-width: 893px) and (min-width: 768px) {
-                  margin-bottom: 40px;
-                }
-            }
-
-            h3#cctv-commercial, h3#cctv-domestic, h3#cctv-site-rental, h3#intruder-alarm-systems, h3#access-control, h3#security-lighting, h3#electrical-services {
-              &:before {
-                content: "";
-                position: absolute;
-                left: 0;
-                top: 10px;
-                width: 100%;
-                height: 50px;
-                background-size: contain;
-                background-position: center;
-                background-repeat: no-repeat;
-                z-index: 1;
-              }
-            }
-
-            h3#cctv-commercial, h3#cctv-domestic, h3#cctv-site-rental {
-              &:before {
-                background-image: url('https://jmksecurity.s3.eu-west-2.amazonaws.com/icon-cctv.svg');
-              }
-            }
-
-            h3#intruder-alarm-systems {
-              &:before {
-                background-image: url('https://jmksecurity.s3.eu-west-2.amazonaws.com/icon-intruder-alarms.svg');
-              }
-            }
-
-            h3#access-control {
-              &:before {
-                background-image: url('https://jmksecurity.s3.eu-west-2.amazonaws.com/icon-access-control.svg');
-              }
-            }
-
-            h3#security-lighting {
-              &:before {
-                background-image: url('https://jmksecurity.s3.eu-west-2.amazonaws.com/icon-security-lighting.svg');
-              }
-            }
-
-            h3#electrical-services {
-              &:before {
-                background-image: url('https://jmksecurity.s3.eu-west-2.amazonaws.com/icon-electrial-services.svg');
-              }
-            }
+          flex-flow: column; 
 
             .wp-block-buttons {
               text-align: center;
@@ -400,30 +572,6 @@ const Content = styled.div`
       margin-top: 0;
     }
 
-    .h2-wrapper {
-      background-color: rgb(237, 83, 43, 1);
-      padding: 1em 1em 0.2em;
-      margin: 25px 0;
-
-        h2.intro-title {
-          font-weight: 900;
-          text-transform: uppercase;
-          font-size: 32px;
-          line-height: normal;
-          color: #fff;
-          margin: 0;
-        }
-      
-        h2.intro-sub-title {
-          font-weight: 300;
-          text-transform: uppercase;
-          font-size: 18px;
-          line-height: normal;
-          margin: 0;
-          color: #fff;
-        }
-    }
-
     .services-group {
       margin-top: 12px;
       margin-bottom: 12px;
@@ -462,51 +610,6 @@ const Content = styled.div`
                 @media (max-width: 893px) and (min-width: 768px) {
                   margin-bottom: 40px;
                 }
-            }
-
-            h3#cctv-systems, h3#intruder-alarms, h3#access-control-systems, h3#security-lighting, h3#maintenance {
-              &:before {
-                content: "";
-                position: absolute;
-                left: 0;
-                top: 10px;
-                width: 100%;
-                height: 50px;
-                background-size: contain;
-                background-position: center;
-                background-repeat: no-repeat;
-                z-index: 1;
-              }
-            }
-
-            h3#cctv-systems {
-              &:before {
-                background-image: url('https://jmksecurity.s3.eu-west-2.amazonaws.com/icon-cctv.svg');
-              }
-            }
-
-            h3#intruder-alarms {
-              &:before {
-                background-image: url('https://jmksecurity.s3.eu-west-2.amazonaws.com/icon-intruder-alarms.svg');
-              }
-            }
-
-            h3#access-control-systems {
-              &:before {
-                background-image: url('https://jmksecurity.s3.eu-west-2.amazonaws.com/icon-access-control.svg');
-              }
-            }
-
-            h3#security-lighting {
-              &:before {
-                background-image: url('https://jmksecurity.s3.eu-west-2.amazonaws.com/icon-security-lighting.svg');
-              }
-            }
-
-            h3#maintenance {
-              &:before {
-                background-image: url('https://jmksecurity.s3.eu-west-2.amazonaws.com/icon-maintenance.svg');
-              }
             }
 
             p {
@@ -553,6 +656,7 @@ const Content = styled.div`
                     }
                 }
             }
+
     }
-  
+
 `;
