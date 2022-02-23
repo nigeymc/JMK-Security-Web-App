@@ -547,9 +547,94 @@ const Content = styled.div`
       }
     }
 
+    .accreditation {
+      margin: -120px 0 25px 0;
+      padding: 15px 0;
+      display: flex;
+      flex-flow: column;
+
+      h5 {
+        text-align: center;
+        font-size: 1em;
+      }
+
+        .accreditation-list {
+          list-style: none;
+          display: flex;
+          width: 100%;
+          padding: 0;
+          text-align: center;
+          display: flex;
+          flex-flow: row;
+
+
+            @media (max-width: 768px) {
+              flex-wrap: wrap;
+            }
+
+            @media (max-width: 570px) {
+              flex-flow: column;
+            }
+
+            li {
+              height: 100%;
+              height: 150px;
+              display: flex;
+              align-items: end;
+              text-align: center;
+              background-size: contain;
+              background-repeat: no-repeat;
+              background-position: center;
+
+                span {
+                  width: 100%;
+                }
+            }
+
+            li:nth-of-type(1) {
+              background-image: url(https://jmksecurity.s3.eu-west-2.amazonaws.com/iso.svg);
+            }
+
+            li:nth-of-type(2) {
+              background-image: url(https://jmksecurity.s3.eu-west-2.amazonaws.com/NICEIC-approvedcontractor.svg);
+              background-size: 45%;
+                @media (max-width: 768px) {
+                  background-size: 20%;
+                }
+
+                @media (max-width: 570px) {
+                  background-size: 40%;
+                }
+            }
+
+            li:nth-of-type(3) {
+              background-image: url(https://jmksecurity.s3.eu-west-2.amazonaws.com/constructionline-logo.svg);
+              background-size: 60%;
+                @media (max-width: 768px) {
+                  background-size: 30%;
+                }
+
+                @media (max-width: 570px) {
+                  background-size: 50%;
+                }
+            }
+
+            li:nth-of-type(4) {
+              background-image: url(https://jmksecurity.s3.eu-west-2.amazonaws.com/psa.svg);
+              background-size: 70%;
+                @media (max-width: 768px) {
+                  background-size: 40%;
+                }
+
+                @media (max-width: 570px) {
+                  background-size: 60%;
+                }
+            }
+        }
+      }
+
     .main-content {
       padding: 25px;
-      margin-top: -5rem;
       display: flex;
       flex-wrap: wrap;
       margin-right: -15px;
