@@ -34,7 +34,8 @@ import HeroBanner from './HeroBanner';
 const Theme = ({ state }) => {
   // Get information about the current URL.
   const data = state.source.get(state.router.link);
-  const postTitle = state.source[data.type][data.id].title.rendered;
+  const post = state.source[data.type][data.id];
+  const postTitle = post.title.rendered;
   const cleanTitle = decode(postTitle);
 
   return (
@@ -44,7 +45,6 @@ const Theme = ({ state }) => {
       <Head>
         <meta name="description" content={state.frontity.description} />
         <html lang="en" />
-        <link rel="shortcut icon" href="https://www.jmkcctv.com/wp-content/uploads/2016/02/jmk-favicon.png" type="image/x-icon" />
       </Head>
 
       {/* Add some global styles for the whole site, like body or a's. 
@@ -418,15 +418,6 @@ a[href^=tel] {
 .btn-dark:hover {
   background: #334050;
   color: #fff;
-}
-
-.btn-primary:hover:active, .btn-primary:hover:focus,
-.btn-dark:hover:active,
-.btn-dark:hover:focus,
-.btn-white.btn-primary:hover:active,
-.btn-white.btn-primary:hover:focus {
-  color: #fff;
-  background-color: #111 !important;
 }
 
 .general-btn {

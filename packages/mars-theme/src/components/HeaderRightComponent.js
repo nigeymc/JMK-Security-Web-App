@@ -36,7 +36,7 @@ const HeaderRightComponent = ({ state }) => {
                 </li>
                 <li className="header-get-a-quote">
                     {items.map((item) =>
-                        item.url.includes('contact-us') && <Link key={item.ID} link={item.url} title="Request a free survey" className="btn btn-primary">Request A <br />Free Survey</Link>
+                        item.url.includes('contact-us') && <Link key={item.ID} link={item.url} title="Request a free survey" className="btn btn-primary no-arrow">Request A <br />Free Survey</Link>
                     )}
                 </li>
             </ul>
@@ -120,8 +120,6 @@ const HeaderRight = styled.div`
                     }
                   }
             }
-              
-              
         }
 
         @media (max-width: 767px) {
@@ -167,7 +165,7 @@ const HeaderRight = styled.div`
         }
     }
 
-    .header-get-a-quote .btn-primary {
+    .header-get-a-quote .btn-primary.no-arrow {
         padding: 12px 25px !important;
         font-size: 13px;
         border-radius: 3px;
@@ -175,26 +173,29 @@ const HeaderRight = styled.div`
         text-transform: capitalize;
         color: #fff;
         margin-top: 5px;
-        @media (max-width: 1200px) {
-          padding: 12px !important;
-        }
-        @media (max-width: 991px) {
-          padding: 12px 30px !important;
-        }
-        @media (max-width: 400px) {
-            display: none;
-        }
-      }
+
+            @media (max-width: 1200px) {
+            padding: 12px !important;
+            }
+
+            @media (max-width: 991px) {
+            padding: 12px 30px !important;
+            }
+
+            @media (max-width: 400px) {
+                display: none;
+            }
+
+                &:hover, &:active, &:focus {
+                    background: #334050;
+                    color: #fff !important;    
+                }
+    }
       
-      .header-get-a-quote .btn-primary:hover {
-        background: #334050;
-        color: $color-primary !important;
-      }
-      
-      ul.navbar-nav>li.header-get-a-quote:hover>a:after {
+    ul.navbar-nav>li.header-get-a-quote:hover>a:after {
         position: relative;
         content: no-close-quote;
-      }
+    }
 `
 
 export default connect(HeaderRightComponent);

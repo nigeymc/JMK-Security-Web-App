@@ -36,7 +36,7 @@ const Post = ({ state, actions, libraries }) => {
   // Get the html2react component.
   const Html2React = libraries.html2react.Component;
 
-  const postTitle = state.source[data.type][data.id].title.rendered;
+  const postTitle = post.title.rendered;
   const cleanTitle = decode(postTitle);
 
   /**
@@ -267,6 +267,10 @@ const Content = styled.div`
           flex-flow: column;
         }
 
+        img {
+          border-left: 10px solid #ED532B;
+        }
+
         ul {
           padding-left: 0;
 
@@ -291,13 +295,24 @@ const Content = styled.div`
                   -webkit-background-position: center;
                   background-position: center;
                   position: absolute;
-                  top: 10px;
+                  top: 0;
                   left: 0;
                 }
             }
         }
+
+      h4 {
+        padding-left: 25px;
+      }
     }
 
+    .intruder-alarms {
+      ul {
+        li {
+          line-height: 2.2em;
+        }
+      }
+    }
     
 
   .h2-wrapper {

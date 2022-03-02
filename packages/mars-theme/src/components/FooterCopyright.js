@@ -6,7 +6,6 @@ import { FaAngleDoubleUp } from 'react-icons/fa';
 
 const FooterCopyright = ({ state }) => {
     const items = state.source.get(`/menu/${state.theme.menuUrl}`).items;
-    console.log(items);
     return (
         <Copyright>
             <Container>

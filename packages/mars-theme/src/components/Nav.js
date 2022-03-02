@@ -2,7 +2,6 @@ import { connect, styled, decode } from "frontity";
 import Link from "./Link";
 import { Container, Row, Col } from 'reactstrap';
 import { FaAngleDown } from 'react-icons/fa';
-import menu from "./Menu";
 
 /**
  * Navigation Component
