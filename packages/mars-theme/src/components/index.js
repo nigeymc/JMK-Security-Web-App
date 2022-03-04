@@ -64,7 +64,7 @@ const Theme = ({ state }) => {
           </HeaderComponent>
           <Nav />
         </Sticky>
-        {cleanTitle.includes("Homepage") ? <HeroBanner image={`https://jmksecurity.s3.eu-west-2.amazonaws.com/omagh-banner.jpeg`} /> : null}
+        {cleanTitle.includes("Homepage") ? <HeroBanner image={`http://wp.jmksecurity.net/wp-content/uploads/2022/02/omagh-banner.jpeg`} /> : null}
         <Main>
           <Switch>
             <Loading when={data.isFetching} />

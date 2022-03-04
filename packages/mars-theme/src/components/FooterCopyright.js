@@ -12,7 +12,7 @@ const FooterCopyright = ({ state }) => {
                 <Row className="align-items-center">
                     <Col md={6}>
                         <div className="copyright-info">
-                            <span>JMK Security Ltd. Copyright &copy; {new Date().getFullYear()} All Rights Reserved. | <a href="http://www.nmk.dev" title="Designed &amp; Engineered by Niall McKenna">Website by Niall McKenna</a></span>
+                            <span>JMK Omagh Ltd. Copyright &copy; {new Date().getFullYear()} All Rights Reserved. | <a href="http://www.nmk.dev" title="Designed &amp; Engineered by Niall McKenna">Website by Niall McKenna</a></span>
                         </div>
                     </Col>
 

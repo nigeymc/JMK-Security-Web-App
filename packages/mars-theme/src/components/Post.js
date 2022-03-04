@@ -255,6 +255,55 @@ const Content = styled.div`
       }
     }
 
+    .partners-card {
+      display: flex;
+      flex-flow: column;
+
+        @media (max-width: 992px) {
+          margin-top: 12px;
+          margin-bottom: 12px;
+        }
+
+        .wp-block-column {
+          background-color: transparent;
+          border-left: solid 10px rgb(237, 83, 43, 1);
+          border-top: solid 1px rgb(237, 83, 43, 1);
+          border-right: solid 1px rgb(237, 83, 43, 1);
+          border-bottom: solid 1px rgb(237, 83, 43, 1);
+          flex: 1;
+          padding: 10px;
+          display: flex;
+          flex-flow: column; 
+
+            h3 {
+              color: rgb(51, 64, 80, 1);
+              position: relative;
+              text-align: center;
+              padding-top: 15px;
+              height: unset;
+        
+                @media (max-width: 893px) and (min-width: 768px) {
+                  margin-bottom: 40px;
+                }
+            }
+
+            .wp-block-buttons {
+              text-align: center;
+              display: flex;
+              justify-content: center;
+              padding: 25px;
+
+                @media (max-width: 1200px) {
+                  padding: 25px 0;
+                }
+                
+                .btn-primary {
+                  padding: 15px 30px 15px 20px;
+                }
+            }
+        }
+    }
+
     .services-sub-page {
       display: flex;
 
