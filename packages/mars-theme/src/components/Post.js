@@ -255,50 +255,62 @@ const Content = styled.div`
       }
     }
 
-    .partners-card {
-      display: flex;
-      flex-flow: column;
+    .partners-content {
+      margin-left: 0;
+      margin-right: 0;
+    }
 
-        @media (max-width: 992px) {
-          margin-top: 12px;
-          margin-bottom: 12px;
-        }
+    .partners-row {
+      background-color: transparent;
+      border-left: solid 10px rgb(237, 83, 43, 1);
+      border-top: solid 1px rgb(237, 83, 43, 1);
+      border-right: solid 1px rgb(237, 83, 43, 1);
+      border-bottom: solid 1px rgb(237, 83, 43, 1);
+      margin-bottom: 25px;
+      margin-left: 0;
+      margin-right: 0;
+      align-items: center;
 
-        .wp-block-column {
-          background-color: transparent;
-          border-left: solid 10px rgb(237, 83, 43, 1);
-          border-top: solid 1px rgb(237, 83, 43, 1);
-          border-right: solid 1px rgb(237, 83, 43, 1);
-          border-bottom: solid 1px rgb(237, 83, 43, 1);
-          flex: 1;
-          padding: 10px;
+        .partners-card {
           display: flex;
-          flex-flow: column; 
-
-            h3 {
-              color: rgb(51, 64, 80, 1);
-              position: relative;
-              text-align: center;
-              padding-top: 15px;
-              height: unset;
-        
-                @media (max-width: 893px) and (min-width: 768px) {
-                  margin-bottom: 40px;
-                }
+          flex-flow: column;
+    
+            @media (max-width: 992px) {
+              margin-top: 12px;
+              margin-bottom: 12px;
             }
-
-            .wp-block-buttons {
-              text-align: center;
+    
+            .wp-block-column {
+              flex: 1;
+              padding: 10px;
               display: flex;
-              justify-content: center;
-              padding: 25px;
-
-                @media (max-width: 1200px) {
-                  padding: 25px 0;
+              flex-flow: column; 
+    
+                h3 {
+                  color: rgb(51, 64, 80, 1);
+                  position: relative;
+                  text-align: center;
+                  padding-top: 15px;
+                  height: unset;
+            
+                    @media (max-width: 893px) and (min-width: 768px) {
+                      margin-bottom: 40px;
+                    }
                 }
-                
-                .btn-primary {
-                  padding: 15px 30px 15px 20px;
+    
+                .wp-block-buttons {
+                  text-align: center;
+                  display: flex;
+                  justify-content: center;
+                  padding: 25px;
+    
+                    @media (max-width: 1200px) {
+                      padding: 25px 0;
+                    }
+                    
+                    .btn-primary {
+                      padding: 15px 30px 15px 20px;
+                    }
                 }
             }
         }
