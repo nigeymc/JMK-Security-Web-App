@@ -3,7 +3,6 @@ import { connect, styled, css, decode } from "frontity";
 import Link from "./Link";
 import List from "./list";
 import FeaturedMedia from "./featured-media";
-import { GiCctvCamera } from "react-icons/gi";
 
 /**
  * The Post component that Mars uses to render any kind of "post type", like
@@ -53,7 +52,6 @@ const Post = ({ state, actions, libraries }) => {
   return data.isReady ? (
     <Container>
       <>
-
         {/* Hide author and date on pages */}
         {!data.isPage && (
           <div>

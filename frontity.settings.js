@@ -26,6 +26,7 @@ const settings = {
         "source": {
           "url": "https://wp.jmksecurity.net/",
           "homepage": "/homepage",
+          "postsPage": "/news"
         }
       }
     },

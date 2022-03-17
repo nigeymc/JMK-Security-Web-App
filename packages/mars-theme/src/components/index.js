@@ -1,7 +1,6 @@
 import bootstrapGlobalStyles from 'bootstrap/dist/css/bootstrap.min.css';
 import { css, connect, styled, Head, Global, decode } from "frontity";
 import Switch from "@frontity/components/switch";
-import Link from "./Link";
 import List from "./list";
 import Post from "./Post";
 import Sticky from 'react-stickky';
@@ -64,7 +63,10 @@ const Theme = ({ state }) => {
           </HeaderComponent>
           <Nav />
         </Sticky>
-        {cleanTitle.includes("Homepage") ? <HeroBanner image={`http://wp.jmksecurity.net/wp-content/uploads/2022/02/omagh-banner.jpeg`} /> : null}
+        {cleanTitle.includes("Homepage") ? <HeroBanner image={`https://wp.jmksecurity.net/wp-content/uploads/2022/02/omagh-banner.jpeg`} /> : null}
+
+        {/* Add the main section. It renders a different component depending
+      on the type of URL we are in. */}
         <Main>
           <Switch>
             <Loading when={data.isFetching} />
