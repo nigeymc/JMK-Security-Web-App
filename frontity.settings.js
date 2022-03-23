@@ -14,8 +14,8 @@ const settings = {
         "theme": {
           "menu": [],
           "featured": {
-            "showOnList": false,
-            "showOnPost": false
+            "showOnList": true,
+            "showOnPost": true
           }
         }
       }
@@ -26,7 +26,7 @@ const settings = {
         "source": {
           "url": "https://wp.jmksecurity.net/",
           "homepage": "/homepage",
-          "postsPage": "/news"
+          "postsPage": "/news/"
         }
       }
     },

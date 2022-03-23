@@ -33,9 +33,6 @@ import HeroBanner from './HeroBanner';
 const Theme = ({ state }) => {
   // Get information about the current URL.
   const data = state.source.get(state.router.link);
-  const post = state.source[data.type][data.id];
-  const postTitle = post.title.rendered;
-  const cleanTitle = decode(postTitle);
 
   return (
     <>
@@ -63,7 +60,7 @@ const Theme = ({ state }) => {
           </HeaderComponent>
           <Nav />
         </Sticky>
-        {cleanTitle.includes("Homepage") ? <HeroBanner image={`https://wp.jmksecurity.net/wp-content/uploads/2022/02/omagh-banner.jpeg`} /> : null}
+        {data.isHome && <HeroBanner image={`https://wp.jmksecurity.net/wp-content/uploads/2022/02/omagh-banner.jpeg`} />}
 
         {/* Add the main section. It renders a different component depending
       on the type of URL we are in. */}

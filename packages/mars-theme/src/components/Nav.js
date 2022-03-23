@@ -14,8 +14,6 @@ const Nav = ({ state }) => {
   // console.log('ITEMS:', items);
 
   const data = state.source.get(state.router.link);
-  const postTitle = state.source[data.type][data.id].title.rendered;
-  const cleanTitle = decode(postTitle);
 
   const [home, services, parnters, projects, news, team, contact] = items;
 
@@ -31,17 +29,17 @@ const Nav = ({ state }) => {
               <div id="navbar-collapse" className="collapse navbar-collapse">
                 <ul className="nav navbar-nav mr-auto">
                   {<li className="nav-item dropdown">
-                    <Link className="nav-link dropdown-toggle" data-toggle="dropdown" link={home.url} aria-current={cleanTitle.includes("Homepage") ? "page" : null}>{home.title}</Link></li>
+                    <Link className="nav-link dropdown-toggle" data-toggle="dropdown" link={home.url} aria-current={data.isHome && "page"}>{home.title}</Link></li>
                   }
                   {newMenu.map((item) =>
                     <li key={item.ID} className="nav-item dropdown">
-                      <Link className="nav-link dropdown-toggle" data-toggle="dropdown" link={item.url} aria-current={state.router.link.includes(item.slug) ? "page" : null}>{item.title}{item.child_items ? <FaAngleDown /> : null}</Link>
+                      <Link className="nav-link dropdown-toggle" data-toggle="dropdown" link={item.url} aria-current={state.router.link.includes(item.slug) && "page"}>{item.title}{item.child_items ? <FaAngleDown /> : null}</Link>
                       {
                         item.child_items ?
                           <ul className="dropdown-menu" role="menu">
                             {item.child_items ? item.child_items.map((childItem) => {
                               return (
-                                <li key={childItem.ID}><Link link={childItem.url} aria-current={state.router.link.includes(childItem.slug) ? "page" : null}>{childItem.title}</Link></li>
+                                <li key={childItem.ID}><Link link={childItem.url} aria-current={state.router.link.includes(childItem.slug) && "page"}>{childItem.title}</Link></li>
                               )
                             }) : null}
                           </ul> : null
