@@ -17,9 +17,9 @@ const MenuModal = ({ ...props }) => {
   const postTitle = state.source[data.type][data.id].title.rendered;
   const cleanTitle = decode(postTitle);
 
-  const [home, services, parnters, projects, news, team, contact] = items;
+  const [home, services, parnters, projects, news, contact] = items;
 
-  const newMenu = [services, parnters, projects, news, team, contact];
+  const newMenu = [services, parnters, projects, news, contact];
 
   return (
     <div {...props}>

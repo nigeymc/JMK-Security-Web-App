@@ -52,6 +52,7 @@ const Post = ({ state, actions, libraries }) => {
         {/* Hide author and date on pages */}
         {!data.isPage && (
           <div>
+            <Title dangerouslySetInnerHTML={{ __html: post.title.rendered }} />
             {author && (
               <StyledLink link={author.link}>
                 <Author>
@@ -132,6 +133,11 @@ const Content = styled.div`
   position: relative;
   display: flex;
   flex-flow: column;
+
+  .wp-block-group:nth-of-type(1) .h2-wrapper {
+    margin-top: -80px!important;
+    z-index: 9;
+  }
 
     h3 {
       color: rgb(51, 64, 80, 1);
@@ -313,6 +319,11 @@ const Content = styled.div`
 
     .services-sub-page {
       display: flex;
+
+      .domestic-list {
+        padding-left: 25px;
+        padding-top: 25px;
+      }
 
         @media (max-width: 992px) {
           flex-flow: column;
