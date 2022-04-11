@@ -23,7 +23,7 @@ const HeaderRightComponent = ({ state }) => {
                     <div className="info-box">
                         <div className="info-box-content">
                             <p className="info-box-title"><GoMailRead /> <span>Email Us</span></p>
-                            <p className="info-box-subtitle"><a href="mailto:john@jmkcctv.com">john@jmkcctv.com</a></p>
+                            <p className="info-box-subtitle"><a href="mailto:hello@jmksecurity.net">hello@jmksecurity.net</a></p>
                         </div>
                     </div>
                 </li>

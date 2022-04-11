@@ -35,18 +35,19 @@ const Theme = ({ state }) => {
   // Get information about the current URL.
   const data = state.source.get(state.router.link);
 
-  function getRndInteger(min, max) {
+  const getRndInteger = (min, max) => {
     return Math.floor(Math.random() * (max - min)) + min;
   }
+
   let headerImage;
-  switch (getRndInteger(0, 4)) {
+  let electricalServicesImg = 'http://wp.jmksecurity.net/wp-content/uploads/2022/03/sub-header4.jpg';
+
+  switch (getRndInteger(0, 3)) {
     case 0: headerImage = 'http://wp.jmksecurity.net/wp-content/uploads/2022/03/sub-header1.jpg'
       break;
     case 1: headerImage = 'http://wp.jmksecurity.net/wp-content/uploads/2022/03/sub-header2.jpg'
       break;
     case 2: headerImage = 'http://wp.jmksecurity.net/wp-content/uploads/2022/03/sub-header3.jpg'
-      break;
-    case 3: headerImage = 'http://wp.jmksecurity.net/wp-content/uploads/2022/03/sub-header4.jpg'
       break;
     default:
   }
@@ -78,7 +79,8 @@ const Theme = ({ state }) => {
           <Nav />
         </Sticky>
         {data.isHome && <HeroBanner image={`https://wp.jmksecurity.net/wp-content/uploads/2022/02/omagh-banner.jpeg`} />}
-        {!data.isHome && !data.isPostArchive && <SubPageHeader image={headerImage} />}
+        {!data.isHome && !data.isPostArchive && data.route !== '/electrical-services/' && <SubPageHeader image={headerImage} />}
+        {data.route === '/electrical-services/' && <SubPageHeader image={electricalServicesImg} />}
 
         {/* Add the main section. It renders a different component depending
       on the type of URL we are in. */}

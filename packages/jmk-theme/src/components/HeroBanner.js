@@ -2,7 +2,7 @@ import React from 'react';
 import { styled, css, connect } from "frontity";
 import { Container } from 'reactstrap';
 
-const HeroBanner = ({ state, libraries, image }) => {
+const HeroBanner = ({ state, image }) => {
   const description = state.source.get(state.frontity.description);
 
   const banner = css`
@@ -67,10 +67,7 @@ const H1 = styled.h1`
     &:first-letter{
       text-transform: capitalize
     }
-    
     `
-
-
 
 export default connect(HeroBanner);
 

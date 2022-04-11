@@ -134,7 +134,155 @@ const Content = styled.div`
   display: flex;
   flex-flow: column;
 
-  .wp-block-group:nth-of-type(1) .h2-wrapper {
+  iframe {
+    min-height: 345px;
+  }
+
+  .wpcf7-form {
+    padding-top: 25px;
+
+    label {
+      display: flex;
+      flex-flow: column;
+      font-size: 0.8em;
+      color: #fff;
+      text-transform: uppercase;
+      font-weight: 900;
+      font-family: 'Montserrat',sans-serif;
+    }
+
+    input, textarea {
+      width: 100% 
+    }
+
+    input:not([type="submit"]), textarea {
+      position: relative;
+      top: -32px;
+      left: -10px;
+      z-index: -3;
+      padding-left: 120px;
+      border: solid 1px rgba(51, 64, 80, 0.7);
+    }
+
+    .wpcf7-submit {
+      top: 0;
+      left: -10px;
+      max-width: 150px;
+      width: 100%;
+      height: 40px;
+      position: relative;
+      border: 0;
+      border-radius: 3px;
+      padding: 15px 30px 15px 20px;
+      font-weight: 700;
+      text-transform: uppercase;
+      color: #fff;
+      font-family: "Montserrat",sans-serif;
+      -webkit-transition: 350ms;
+      transition: 350ms;
+      font-size: 14px;
+      background: #ED532B;
+      line-height: 0.9;
+    }
+
+    .wpcf7-submit:hover {
+      background-color: #334050;
+    }
+
+    input[name="number-820"] {
+      padding-left: 200px;
+    }
+
+    input[name="your-subject"] {
+      padding-left: 142px;
+    }
+
+    textarea[name="your-message"] {
+      padding-left: 10px;
+      padding-top: 40px;
+    }
+
+    p {
+      margin-top: -25px;
+    }
+
+    .wpcf7-form-control-wrap {
+      position: relative;
+
+      span {
+        color: #f00;
+        font-size: 1em;
+        font-weight: normal;
+        display: block;
+        top: -32px;
+        position: relative;
+      }
+    }
+
+    .your-name:before {
+      content: "";
+      width: 114px;
+      background-color: #334050;
+      top: -31px;
+      z-index: -1;
+      position: absolute;
+      height: 31px;
+      left: -9px;
+    }
+
+    .your-email:before {
+      content: "";
+      width: 114px;
+      background-color: #334050;
+      top: -31px;
+      z-index: -1;
+      position: absolute;
+      height: 31px;
+      left: -9px;
+    }
+
+    .number-820:before {
+      content: "";
+      width: 193px;
+      background-color: #334050;
+      top: -31px;
+      z-index: -1;
+      position: absolute;
+      height: 31px;
+      left: -9px;
+    }
+
+    .your-subject:before {
+      content: "";
+      width: 134px;
+      background-color: #334050;
+      top: -31px;
+      z-index: -1;
+      position: absolute;
+      height: 31px;
+      left: -9px;
+    }
+
+    .your-message:before {
+      content: "";
+      width: 140px;
+      background-color: #334050;
+      top: -31px;
+      z-index: -1;
+      position: absolute;
+      height: 31px;
+      left: -9px;
+    }
+
+  }
+
+  .logos {
+    flex-flow: column;
+    justify-content: center;
+    display: flex;
+  }
+
+  .wp-container-1.h2-wrapper, .wp-container-2  .h2-wrapper, .wp-container-3  .h2-wrapper {
     margin-top: -80px!important;
     z-index: 9;
   }
@@ -374,6 +522,11 @@ const Content = styled.div`
     }
 
     .intruder-alarms {
+      .photo-summary {
+        text-align: center;
+        margin-top: -20px;
+      }
+      
       ul {
         li {
           line-height: 2.2em;
