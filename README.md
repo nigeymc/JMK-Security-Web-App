@@ -1,4 +1,4 @@
-# jmksecurity-app jmksecurity.net
+# jmksecurity.net
 
 This project was bootstrapped with [Frontity](https://frontity.org/).
 
