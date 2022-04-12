@@ -134,6 +134,10 @@ const Content = styled.div`
   display: flex;
   flex-flow: column;
 
+  .center-images {
+    align-items: center;
+  }
+
   .wp-block-file {
     a {
       display: none;
@@ -548,7 +552,6 @@ const Content = styled.div`
         }
       }
     }
-    
 
   .h2-wrapper {
     background-color: rgb(237, 83, 43, 1);
@@ -807,80 +810,36 @@ const Content = styled.div`
         font-size: 1em;
       }
 
-        .accreditation-list {
-          list-style: none;
-          display: flex;
-          width: 100%;
-          padding: 0;
-          text-align: center;
-          display: flex;
-          flex-flow: row;
+      .accreditation-icons {
+        text-align: center;
+        align-items: center;
 
+          @media (max-width: 768px) {
+            flex-wrap: wrap;
+          }
+
+          @media (max-width: 570px) {
+            flex-flow: column;
+          }
+
+          span {
+            padding: 0 25px;
+            display: flex;
 
             @media (max-width: 768px) {
-              flex-wrap: wrap;
+              justify-content: center;
             }
 
-            @media (max-width: 570px) {
-              flex-flow: column;
-            }
+             img {
+              position: relative;
 
-            li {
-              height: 100%;
-              height: 150px;
-              display: flex;
-              align-items: end;
-              text-align: center;
-              background-size: contain;
-              background-repeat: no-repeat;
-              background-position: center;
-
-                span {
-                  width: 100%;
-                }
-            }
-
-            li:nth-of-type(1) {
-              background-image: url(http://wp.jmksecurity.net/wp-content/uploads/2022/04/iso.svg);
-            }
-
-            li:nth-of-type(2) {
-              background-image: url(http://wp.jmksecurity.net/wp-content/uploads/2022/04/NICEIC-approvedcontractor.svg);
-              background-size: 45%;
-                @media (max-width: 768px) {
-                  background-size: 20%;
-                }
-
-                @media (max-width: 570px) {
-                  background-size: 40%;
-                }
-            }
-
-            li:nth-of-type(3) {
-              background-image: url(http://wp.jmksecurity.net/wp-content/uploads/2022/04/constructionline-logo.svg);
-              background-size: 60%;
-                @media (max-width: 768px) {
-                  background-size: 30%;
-                }
-
-                @media (max-width: 570px) {
-                  background-size: 50%;
-                }
-            }
-
-            li:nth-of-type(4) {
-              background-image: url(http://wp.jmksecurity.net/wp-content/uploads/2022/04/psa.svg);
-              background-size: 70%;
-                @media (max-width: 768px) {
-                  background-size: 40%;
-                }
-
-                @media (max-width: 570px) {
-                  background-size: 60%;
-                }
-            }
-        }
+              @media (max-width: 768px) {
+                width: 60%;
+              }
+             }
+          }
       }
+    }
 
     .main-content {
       padding: 25px;
