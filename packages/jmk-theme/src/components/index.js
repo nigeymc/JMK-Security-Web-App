@@ -1,5 +1,5 @@
 import bootstrapGlobalStyles from 'bootstrap/dist/css/bootstrap.min.css';
-import { css, connect, styled, Head, Global, decode } from "frontity";
+import { css, connect, styled, Head, Global } from "frontity";
 import Switch from "@frontity/components/switch";
 import List from "./list";
 import Post from "./Post";
