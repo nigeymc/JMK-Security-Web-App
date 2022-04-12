@@ -84,7 +84,7 @@ const Theme = ({ state }) => {
           <Nav />
         </Sticky>
         {data.isHome && <HeroBanner image={`https://wp.jmksecurity.net/wp-content/uploads/2022/02/omagh-banner.jpeg`} />}
-        {!data.isHome && !data.isPostArchive && data.route !== '/electrical-services/' && <SubPageHeader image={headerImage} />}
+        {!data.isHome && !data.isPostArchive && !data.isPostType && data.route !== '/electrical-services/' && <SubPageHeader image={headerImage} />}
         {data.route === '/electrical-services/' && <SubPageHeader image={electricalServicesImg} />}
 
         {/* Add the main section. It renders a different component depending

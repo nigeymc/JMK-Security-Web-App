@@ -14,12 +14,10 @@ const MenuModal = ({ ...props }) => {
   const isThereLinks = items.length > 0;
 
   const data = state.source.get(state.router.link);
-  const postTitle = state.source[data.type][data.id].title.rendered;
-  const cleanTitle = decode(postTitle);
 
-  const [home, services, parnters, projects, news, contact] = items;
+  const [home, services, partners, projects, news, contact] = items;
 
-  const newMenu = [services, parnters, projects, news, contact];
+  const newMenu = [services, partners, projects, news, contact];
 
   return (
     <div {...props}>
@@ -27,7 +25,7 @@ const MenuModal = ({ ...props }) => {
       <MenuContent as="nav">
         <ul>
           {<li className="nav-item dropdown">
-            <MenuLink link={home.url} aria-current={cleanTitle.includes("Homepage") ? "page" : null}>{home.title}</MenuLink></li>
+            <MenuLink link={home.url} aria-current={data.isHome ? "page" : null}>{home.title}</MenuLink></li>
           }
           {isThereLinks && newMenu.map((item) =>
             <li key={item.ID}>
