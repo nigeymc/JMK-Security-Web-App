@@ -134,6 +134,11 @@ const Content = styled.div`
   display: flex;
   flex-flow: column;
 
+  .no-border {
+    border: none;
+    padding: 0 15px;
+  }
+
   .wp-block-file {
     a {
       display: none;
