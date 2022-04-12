@@ -39,9 +39,6 @@ const Title = ({ state }) => {
     <Head>
       <title>{title}</title>
       <meta property="og:title" content={title} key="title" />
-      <meta property={state.frontity.description} />
-      <meta property="og:url" content={'https://jmksecurity.net' + data.route} />
-      <meta property="og:image" content="https://wp.jmksecurity.net/wp-content/uploads/2022/04/JMK-Security-Logo-LB.svg" />
     </Head>
   );
 };
