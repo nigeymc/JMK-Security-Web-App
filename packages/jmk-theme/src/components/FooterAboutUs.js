@@ -10,7 +10,7 @@ const FooterAboutUs = ({ state }) => {
   return (
     <FooterWidget className="col-lg-4 col-md-6 footer-widget">
       <h3 className="widget-title">About Us</h3>
-      <img loading="lazy" className="footer-logo" src="https://jmksecurity.s3.eu-west-2.amazonaws.com/JMK_security_logo_db.svg" alt="JMK Security Logo" />
+      <img loading="lazy" className="footer-logo" src="http://wp.jmksecurity.net/wp-content/uploads/2022/04/JMK_security_logo_db.svg" alt="JMK Security Logo" />
       <p>Bespoke security systems that <br />protect your people, processes, and assets.</p>
       <div className="footer-social">
         <SocialIconsContainer />

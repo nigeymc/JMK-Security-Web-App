@@ -134,8 +134,15 @@ const Content = styled.div`
   display: flex;
   flex-flow: column;
 
+  .wp-block-file {
+    a {
+      display: none;
+    }
+  }
+
   iframe {
     min-height: 345px;
+    width: 100%;
   }
 
   .wpcf7-form {
@@ -346,61 +353,61 @@ const Content = styled.div`
 
     h3#cctv-commercial, h3#cctv-domestic, h3#cctv-site-rental {
       &:before {
-        background-image: url('https://jmksecurity.s3.eu-west-2.amazonaws.com/icon-cctv.svg');
+        background-image: url('http://wp.jmksecurity.net/wp-content/uploads/2022/04/icon-commercial.svg');
       }
     }
 
     h3#cctv-commercial {
       &:after {
-        background-image: url('https://jmksecurity.s3.eu-west-2.amazonaws.com/icon-commercial.svg');
+        background-image: url('http://wp.jmksecurity.net/wp-content/uploads/2022/04/icon-commercial.svg');
       }
     }
 
     h3#cctv-domestic {
       &:after {
-        background-image: url('https://jmksecurity.s3.eu-west-2.amazonaws.com/icon-domestic.svg');
+        background-image: url('http://wp.jmksecurity.net/wp-content/uploads/2022/04/icon-domestic.svg');
       }
     }
 
     h3#cctv-site-rental {
       &:after {
-        background-image: url('https://jmksecurity.s3.eu-west-2.amazonaws.com/icon-site-rental.svg');
+        background-image: url('http://wp.jmksecurity.net/wp-content/uploads/2022/04/icon-site-rental.svg');
       }
     }
 
     h3#intruder-alarm-systems {
       &:before {
-        background-image: url('https://jmksecurity.s3.eu-west-2.amazonaws.com/icon-intruder-alarms.svg');
+        background-image: url('http://wp.jmksecurity.net/wp-content/uploads/2022/04/icon-intruder-alarms.svg');
       }
     }
 
     h3#security-lighting {
       &:before {
-        background-image: url('https://jmksecurity.s3.eu-west-2.amazonaws.com/icon-security-lighting.svg');
+        background-image: url('http://wp.jmksecurity.net/wp-content/uploads/2022/04/icon-security-lighting.svg');
       }
     }
 
     h3#electrical-services {
       &:before {
-        background-image: url('https://jmksecurity.s3.eu-west-2.amazonaws.com/icon-electrial-services.svg');
+        background-image: url('http://wp.jmksecurity.net/wp-content/uploads/2022/04/icon-electrial-services.svg');
       }
     }
 
     h3#cctv-systems {
       &:before {
-        background-image: url('https://jmksecurity.s3.eu-west-2.amazonaws.com/icon-cctv.svg');
+        background-image: url('http://wp.jmksecurity.net/wp-content/uploads/2022/04/icon-cctv.svg');
       }
     }
 
     h3#access-control-systems {
       &:before {
-        background-image: url('https://jmksecurity.s3.eu-west-2.amazonaws.com/icon-access-control.svg');
+        background-image: url('http://wp.jmksecurity.net/wp-content/uploads/2022/04/icon-access-control.svg');
       }
     }
 
     h3#maintenance {
       &:before {
-        background-image: url('https://jmksecurity.s3.eu-west-2.amazonaws.com/icon-maintenance.svg');
+        background-image: url('http://wp.jmksecurity.net/wp-content/uploads/2022/04/icon-maintenance.svg');
       }
     }
 
@@ -503,7 +510,7 @@ const Content = styled.div`
                   content: "";
                   width: 40px;
                   height: 40px;
-                  background-image: url(https://jmksecurity.s3.eu-west-2.amazonaws.com/icon-check-shield.svg);
+                  background-image: url(http://wp.jmksecurity.net/wp-content/uploads/2022/04/icon-check-shield.svg);
                   background-repeat: no-repeat;
                   -webkit-background-size: contain;
                   background-size: contain;
@@ -539,6 +546,9 @@ const Content = styled.div`
     background-color: rgb(237, 83, 43, 1);
     padding: 1em;
     margin: 25px 0;
+    @media (max-width: 768px) {
+      margin: 25px -15px;
+    }
 
       h2.intro-title {
         font-weight: 900;
@@ -647,7 +657,7 @@ const Content = styled.div`
               content: "";
               width: 40px;
               height: 40px;
-              background-image: url('https://jmksecurity.s3.eu-west-2.amazonaws.com/icon-check-shield.svg');
+              background-image: url('http://wp.jmksecurity.net/wp-content/uploads/2022/04/icon-check-shield.svg');
               background-repeat: no-repeat;
               background-size: contain;
               background-position: center;
@@ -827,11 +837,11 @@ const Content = styled.div`
             }
 
             li:nth-of-type(1) {
-              background-image: url(https://jmksecurity.s3.eu-west-2.amazonaws.com/iso.svg);
+              background-image: url(http://wp.jmksecurity.net/wp-content/uploads/2022/04/iso.svg);
             }
 
             li:nth-of-type(2) {
-              background-image: url(https://jmksecurity.s3.eu-west-2.amazonaws.com/NICEIC-approvedcontractor.svg);
+              background-image: url(http://wp.jmksecurity.net/wp-content/uploads/2022/04/NICEIC-approvedcontractor.svg);
               background-size: 45%;
                 @media (max-width: 768px) {
                   background-size: 20%;
@@ -843,7 +853,7 @@ const Content = styled.div`
             }
 
             li:nth-of-type(3) {
-              background-image: url(https://jmksecurity.s3.eu-west-2.amazonaws.com/constructionline-logo.svg);
+              background-image: url(http://wp.jmksecurity.net/wp-content/uploads/2022/04/constructionline-logo.svg);
               background-size: 60%;
                 @media (max-width: 768px) {
                   background-size: 30%;
@@ -855,7 +865,7 @@ const Content = styled.div`
             }
 
             li:nth-of-type(4) {
-              background-image: url(https://jmksecurity.s3.eu-west-2.amazonaws.com/psa.svg);
+              background-image: url(http://wp.jmksecurity.net/wp-content/uploads/2022/04/psa.svg);
               background-size: 70%;
                 @media (max-width: 768px) {
                   background-size: 40%;
@@ -962,7 +972,7 @@ const Content = styled.div`
                           content: "";
                           width: 16px;
                           height: 20px;
-                          background-image: url('https://jmksecurity.s3.eu-west-2.amazonaws.com/button-right-orange.svg');
+                          background-image: url('http://wp.jmksecurity.net/wp-content/uploads/2022/04/button-right-orange.svg');
                           background-size: contain;
                           background-position: center;
                           position: absolute;

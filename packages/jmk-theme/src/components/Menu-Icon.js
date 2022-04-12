@@ -16,9 +16,8 @@ export const HamburgerIcon = ({ size, color, ...props }) => {
     >
       <title>Open menu</title>
       <g fill="currentColor">
-        <rect height="3" width="23" rx="1" ry="1" x=".5" y="2.5" />
-        <rect height="3" width="23" rx="1" ry="1" x=".5" y="10.5" />
-        <rect height="3" width="23" rx="1" ry="1" x=".5" y="18.5" />
+        <path fill="none" d="M0 0h24v24H0z"></path>
+        <path d="M3 4h18v2H3V4zm6 7h12v2H9v-2zm-6 7h18v2H3v-2z"></path>
       </g>
     </svg>
   );

@@ -30,7 +30,7 @@ const HeaderRightComponent = ({ state }) => {
                 <li className="last">
                     <div className="info-box last">
                         <div className="info-box-content">
-                            <img src="https://jmksecurity.s3.eu-west-2.amazonaws.com/NICEIC-approvedcontractor.svg" alt="NIC EIC Approved Contractor logo" />
+                            <img src="http://wp.jmksecurity.net/wp-content/uploads/2022/04/NICEIC-approvedcontractor.svg" alt="NIC EIC Approved Contractor logo" />
                         </div>
                     </div>
                 </li>
@@ -128,7 +128,6 @@ const HeaderRight = styled.div`
               text-align: center;
               margin: 0;
               padding: 0 20px;
-              margin-top: 10px;
             }
         }
 
@@ -138,7 +137,6 @@ const HeaderRight = styled.div`
               text-align: center;
               margin: 0;
               flex: 0 0 100%;
-              margin-top: 15px;
             }
         }
 

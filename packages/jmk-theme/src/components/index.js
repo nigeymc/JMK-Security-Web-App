@@ -57,8 +57,13 @@ const Theme = ({ state }) => {
       {/* Add some metatags to the <head> of the HTML. */}
       <Title />
       <Head>
+        <meta charset="UTF-8"></meta>
         <meta name="description" content={state.frontity.description} />
+        <meta name="keywords" content="Ireland, Northern Ireland, Tyrone, CCTV, domestic, commercial, home cctv, cctv site rental, intruder systems, access control systems, electrical services, cctv installations, ANPR systmes, construction site security" />
+        <meta name="author" content="Niall McKenna" />
         <html lang="en" />
+        <meta name="robots" />
+        <meta name="googlebot" />
       </Head>
 
       {/* Add some global styles for the whole site, like body or a's. 

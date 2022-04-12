@@ -12,7 +12,7 @@ const MainHeaderComponent = ({ children, state }) => {
             <Row className="align-items-center">
                 <Col lg="3" className="logo text-lg-left mb-3 mb-md-5 mb-lg-0">
                     <Link className="d-block" data-toggle="dropdown" link={home.url}>
-                        <img src="https://jmksecurity.s3.eu-west-2.amazonaws.com/JMK-Security-Logo-LB.svg" alt="JMK Security logo" />
+                        <img src="http://wp.jmksecurity.net/wp-content/uploads/2022/04/JMK-Security-Logo-LB.svg" alt="JMK Security logo" />
                     </Link>
                 </Col>
                 {children}

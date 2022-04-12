@@ -31,12 +31,12 @@ const MenuModal = ({ ...props }) => {
           }
           {isThereLinks && newMenu.map((item) =>
             <li key={item.ID}>
-              <MenuLink link={item.url} aria-current={state.router.link.includes(item.slug) ? "page" : null}>{item.title}</MenuLink>
+              <MenuLink key={item.ID} link={item.url} aria-current={state.router.link.includes(item.slug) ? "page" : null}>{item.title}</MenuLink>
               {item.child_items ?
-                <ul>
+                <ul className="sub">
                   {item.child_items ? item.child_items.map((childItem) => {
                     return (
-                      <li><MenuLink key={childItem.ID} link={childItem.url} aria-current={state.router.link.includes(childItem.slug) ? "page" : null}>{childItem.title}</MenuLink></li>
+                      <li key={childItem.ID}><MenuLink key={childItem.ID} link={childItem.url} aria-current={state.router.link.includes(childItem.slug) ? "page" : null}>{childItem.title}</MenuLink></li>
                     )
                   }) : null}
                 </ul> : null}
@@ -63,12 +63,13 @@ const MenuOverlay = styled.div`
 const MenuContent = styled.div`
   z-index: 999;
   position: absolute;
-  top: -40px;
-  width: 65vw;
+  top: -70px;
+  width: 95vw;
   justify-content: center;
 
   ul {
     list-style: none;
+    padding-left: 0;
 
     /* styles for active link */
     [aria-current="page"] {
@@ -76,14 +77,22 @@ const MenuContent = styled.div`
       background-color: rgba(0, 0, 0, 0.05);
       text-shadow: 1px 1px 1px #b5b5b5;
     }
+
+    .sub {
+      padding-left: 15px;
+    }
+
+    a:hover {
+      color: unset !important;
+    }
   }
 `;
 
 const MenuLink = styled(Link)`
-  width: 100%;
+  width: auto;
   padding: 0.7rem 0.7em;
   font-family: "Montserrat", sans-serif;
-  display: block;
+  display: inline-block;
   font-size: 16px;
   text-transform: uppercase;
   font-weight: 700;
