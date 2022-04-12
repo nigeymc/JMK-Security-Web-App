@@ -38,6 +38,7 @@ const Title = ({ state }) => {
   return (
     <Head>
       <title>{title}</title>
+      <meta property="og:title" content={title} key="title" />
     </Head>
   );
 };
