@@ -1,5 +1,5 @@
 import bootstrapGlobalStyles from 'bootstrap/dist/css/bootstrap.min.css';
-import { css, connect, styled, Head, Global } from "frontity";
+import { css, connect, styled, Head, Global, decode } from "frontity";
 import Switch from "@frontity/components/switch";
 import List from "./list";
 import Post from "./Post";
@@ -34,6 +34,7 @@ import SubPageHeader from './SubPageHeader';
 const Theme = ({ state }) => {
   // Get information about the current URL.
   const data = state.source.get(state.router.link);
+  console.log(data);
 
   const getRndInteger = (min, max) => {
     return Math.floor(Math.random() * (max - min)) + min;

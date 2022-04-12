@@ -133,7 +133,6 @@ const Content = styled.div`
   position: relative;
   display: flex;
   flex-flow: column;
-  }
 
   .wp-block-file {
     a {
@@ -493,12 +492,6 @@ const Content = styled.div`
         img {
           border-left: 10px solid #ED532B;
         }
-
-        .no-border {
-          img {
-            border: none;
-            padding: 0 15px;
-          }
 
         ul {
           padding-left: 0;
