@@ -41,6 +41,7 @@ const Theme = ({ state }) => {
 
   let headerImage;
   let electricalServicesImg = 'http://wp.jmksecurity.net/wp-content/uploads/2022/03/sub-header4.jpg';
+  let rentalImg = 'https://wp.jmksecurity.net/wp-content/uploads/2022/02/towers_banner_no_logo.png';
 
   switch (getRndInteger(0, 3)) {
     case 0: headerImage = 'http://wp.jmksecurity.net/wp-content/uploads/2022/03/sub-header1.jpg'
@@ -84,8 +85,9 @@ const Theme = ({ state }) => {
           <Nav />
         </Sticky>
         {data.isHome && <HeroBanner image={`https://wp.jmksecurity.net/wp-content/uploads/2022/02/omagh-banner.jpeg`} />}
-        {!data.isHome && !data.isPostArchive && !data.link.includes('/news') && data.route !== '/electrical-services/' && <SubPageHeader image={headerImage} />}
+        {!data.isHome && !data.isPostArchive && !data.link.includes('/news') && data.route !== '/electrical-services/' && data.route !== '/cctv-site-and-rental/' && <SubPageHeader image={headerImage} />}
         {data.route === '/electrical-services/' && <SubPageHeader image={electricalServicesImg} />}
+        {data.route === '/cctv-site-and-rental/' && <SubPageHeader image={rentalImg} />}
 
         {/* Add the main section. It renders a different component depending
       on the type of URL we are in. */}
