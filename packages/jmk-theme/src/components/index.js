@@ -34,6 +34,7 @@ import SubPageHeader from './SubPageHeader';
 const Theme = ({ state }) => {
   // Get information about the current URL.
   const data = state.source.get(state.router.link);
+  console.log(data);
 
   const getRndInteger = (min, max) => {
     return Math.floor(Math.random() * (max - min)) + min;
@@ -84,7 +85,7 @@ const Theme = ({ state }) => {
           <Nav />
         </Sticky>
         {data.isHome && <HeroBanner image={`https://wp.jmksecurity.net/wp-content/uploads/2022/02/omagh-banner.jpeg`} />}
-        {!data.isHome && !data.isPostArchive && !data.isPostType && data.route !== '/electrical-services/' && <SubPageHeader image={headerImage} />}
+        {!data.isHome && !data.isPostArchive && !data.link.includes('/news') && data.route !== '/electrical-services/' && <SubPageHeader image={headerImage} />}
         {data.route === '/electrical-services/' && <SubPageHeader image={electricalServicesImg} />}
 
         {/* Add the main section. It renders a different component depending
