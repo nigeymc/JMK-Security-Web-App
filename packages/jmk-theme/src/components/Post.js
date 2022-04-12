@@ -489,6 +489,14 @@ const Content = styled.div`
           flex-flow: column;
         }
 
+        .no-border {
+          img {
+            border: none;
+          }
+
+          padding: 0 15px;
+        }
+
         img {
           border-left: 10px solid #ED532B;
         }
@@ -586,6 +594,7 @@ const Content = styled.div`
 
           .banner {
             order: 1;
+            background-position: center;
           }
 
           div:not(.banner) {
@@ -595,19 +604,14 @@ const Content = styled.div`
 
       .banner {
         min-height: 350px;
-        background-image: url(http://wp.jmksecurity.net/wp-content/uploads/2022/02/towers_banner_no_logo.png);
-        background-size: cover;
+        background-image: url(http://wp.jmksecurity.net/wp-content/uploads/2022/04/Tower-range-solar-.png);
+        background-size: contain;
         background-repeat: no-repeat;
-        background-position: center center;
+        background-position: right center;
 
-          @media (max-width: 768px) {
-            background-position: 80% center;
+          @media (max-width: 1000px) {
+            background-position: center;
           }
-
-          @media (max-width: 718px) {
-            background-position: 80% center;
-          }
-        
       }
     }
 
