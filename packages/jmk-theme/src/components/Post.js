@@ -607,6 +607,7 @@ const Content = styled.div`
 
       .banner {
         min-height: 350px;
+        background-color: #334050;
       }
     }
 
