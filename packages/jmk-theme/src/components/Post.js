@@ -822,21 +822,29 @@ const Content = styled.div`
             flex-flow: column;
           }
 
-          span {
-            padding: 0 25px;
-            display: flex;
-
-            @media (max-width: 768px) {
-              justify-content: center;
+          figure {
+            figcaption {
+              font-size: 1em;
+              line-height: 1.5;
+              padding-top: 10px;
             }
 
-             img {
-              position: relative;
-
+            span {
+              padding: 0 25px;
+              display: flex;
+  
               @media (max-width: 768px) {
-                width: 60%;
+                justify-content: center;
               }
-             }
+  
+               img {
+                position: relative;
+  
+                @media (max-width: 768px) {
+                  width: 60%;
+                }
+               }
+            }
           }
       }
     }
