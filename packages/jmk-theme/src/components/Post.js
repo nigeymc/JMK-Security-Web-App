@@ -607,14 +607,6 @@ const Content = styled.div`
 
       .banner {
         min-height: 350px;
-        background-image: url(http://wp.jmksecurity.net/wp-content/uploads/2022/04/Tower-range-solar-.png);
-        background-size: contain;
-        background-repeat: no-repeat;
-        background-position: right center;
-
-          @media (max-width: 1000px) {
-            background-position: center;
-          }
       }
     }
 
