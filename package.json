@@ -28,6 +28,7 @@
     "jmk-theme": "file:packages/jmk-theme",
     "react-google-recaptcha": "^2.1.0",
     "react-icons": "^4.3.1",
+    "react-share": "^4.4.0",
     "react-stickky": "^3.1.0",
     "reactstrap": "^9.0.1"
   }

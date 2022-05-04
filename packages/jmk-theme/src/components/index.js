@@ -123,9 +123,6 @@ const Main = styled.main`
   padding: 1em;
   margin: auto;
 
-  img {
-    max-width: 100%;
-  }
   h2 {
     margin: 0.5em 0;
   }

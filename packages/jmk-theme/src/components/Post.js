@@ -1,8 +1,11 @@
 import { useEffect } from "react";
-import { connect, styled, css, decode } from "frontity";
+import { connect, styled } from "frontity";
 import Link from "./Link";
 import List from "./list";
 import FeaturedMedia from "./featured-media";
+import socialSharingComponent from "./socialSharingComponent";
+import SocialSharingComponent from "./socialSharingComponent";
+
 
 /**
  * The Post component that Mars uses to render any kind of "post type", like
@@ -26,6 +29,7 @@ import FeaturedMedia from "./featured-media";
 const Post = ({ state, actions, libraries }) => {
   // Get information about the current URL.
   const data = state.source.get(state.router.link);
+  console.log(data.link);
   // Get the data of the post.
   const post = state.source[data.type][data.id];
   // Get the data of the author.
@@ -64,13 +68,16 @@ const Post = ({ state, actions, libraries }) => {
               {" "}
               on <b>{date.toDateString()}</b>
             </DateWrapper>
+            <SocialSharingComponent url={`https://jmksecurity.net${data.link}`} size={32} round={true} />
           </div>
         )}
       </>
 
       {/* Look at the settings to see if we should include the featured image */}
       {state.theme.featured.showOnPost && (
-        <FeaturedMedia id={post.featured_media} />
+        <div className="featured-image">
+          <FeaturedMedia id={post.featured_media} />
+        </div>
       )}
 
       {data.isAttachment ? (
@@ -97,6 +104,17 @@ const Container = styled.div`
   width: 100%;
   margin: 0;
   padding: 24px;
+
+    .featured-image {
+      max-width: 600px;
+      width: 100%;
+      margin: 16px auto;
+
+       div {
+        margin-top: unset;
+        height: unset;
+       }
+    }
 `;
 
 const Title = styled.h1`
@@ -133,6 +151,36 @@ const Content = styled.div`
   position: relative;
   display: flex;
   flex-flow: column;
+
+  ul {
+    padding-left: 25px;
+
+      li {
+        line-height: 1.6em;
+        font-size: 1.2em;
+        padding: 0 25px 0 0;
+        list-style: none;
+        font-weight: 500;
+        margin-bottom: 15px;
+        padding-left: 50px;
+        position: relative;
+
+          &:before {
+            content: "";
+            width: 40px;
+            height: 40px;
+            background-image: url(http://wp.jmksecurity.net/wp-content/uploads/2022/04/icon-check-shield.svg);
+            background-repeat: no-repeat;
+            -webkit-background-size: contain;
+            background-size: contain;
+            -webkit-background-position: center;
+            background-position: center;
+            position: absolute;
+            top: 0;
+            left: 0;
+          }
+      }
+  }
 
   .center-images {
     align-items: center;
@@ -357,7 +405,7 @@ const Content = styled.div`
 
     h3#cctv-commercial, h3#cctv-domestic, h3#cctv-site-rental {
       &:before {
-        background-image: url('http://wp.jmksecurity.net/wp-content/uploads/2022/04/icon-commercial.svg');
+        background-image: url('https://wp.jmksecurity.net/wp-content/uploads/2022/04/icon-cctv.svg');
       }
     }
 
