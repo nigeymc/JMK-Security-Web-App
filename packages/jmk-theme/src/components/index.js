@@ -60,11 +60,12 @@ const Theme = ({ state }) => {
       <Head>
         <meta charset="UTF-8"></meta>
         <meta name="description" content={state.frontity.description} />
-        <meta name="keywords" content="Ireland, Northern Ireland, Tyrone, CCTV, domestic, commercial, home cctv, cctv site rental, intruder systems, access control systems, electrical services, cctv installations, ANPR systmes, construction site security" />
+        <meta name="keywords" content="CCTV, security, Ireland, Northern Ireland, Tyrone, domestic cctv, commercial cctv, home cctv, cctv site rental, intruder systems, access control systems, electrical services, cctv installations, ANPR systmes, construction site security" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"></meta>
         <meta property="og:type" content="website" />
         <meta property={state.frontity.description} />
-        <meta property="og:url" content={'https://jmksecurity.net' + data.route} />
-        <meta property="og:image" content="https://wp.jmksecurity.net/wp-content/uploads/2022/04/JMK-Security-Logo-LB.svg" />
+        <meta property="og:url" content={`https://jmksecurity.net${data.route}`} />
+        <meta property="og:image" content="https://wp.jmksecurity.net/wp-content/uploads/2022/05/Screenshot-2022-05-05-at-1.02.39-am.png" />
         <html lang="en" />
         <meta name="robots" />
         <meta name="googlebot" />

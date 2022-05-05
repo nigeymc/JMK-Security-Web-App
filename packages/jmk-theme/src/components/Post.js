@@ -29,7 +29,6 @@ import SocialSharingComponent from "./socialSharingComponent";
 const Post = ({ state, actions, libraries }) => {
   // Get information about the current URL.
   const data = state.source.get(state.router.link);
-  console.log(data.link);
   // Get the data of the post.
   const post = state.source[data.type][data.id];
   // Get the data of the author.
@@ -38,6 +37,10 @@ const Post = ({ state, actions, libraries }) => {
   const date = new Date(post.date);
   // Get the html2react component.
   const Html2React = libraries.html2react.Component;
+
+  const urlArr = data.link.split("/");
+  const breadcrumbsArr = urlArr.filter(e => e);
+  const [level1, level2] = breadcrumbsArr;
 
   /**
    * Once the post has loaded in the DOM, prefetch both the
@@ -56,6 +59,7 @@ const Post = ({ state, actions, libraries }) => {
         {/* Hide author and date on pages */}
         {!data.isPage && (
           <div>
+            <StyledLink link={`/${level1}`}><b>{`< Go Back to News`}</b></StyledLink>
             <Title dangerouslySetInnerHTML={{ __html: post.title.rendered }} />
             {author && (
               <StyledLink link={author.link}>
@@ -126,6 +130,10 @@ const Title = styled.h1`
 
 const StyledLink = styled(Link)`
   padding: 15px 0;
+
+  &:hover {
+    color: rgba(12, 17, 43, 0.9);
+  }
 `;
 
 const Author = styled.p`

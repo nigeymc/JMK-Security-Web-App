@@ -55,7 +55,8 @@ const Item = ({ state, item }) => {
 export default connect(Item);
 
 const Article = styled.article`
-  width: 800px;
+  max-width: 800px;
+  width: 100%;
 `;
 
 const Title = styled.h1`

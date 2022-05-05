@@ -1,6 +1,7 @@
 import { connect, styled, decode } from "frontity";
 import Item from "./list-item";
 import Pagination from "./pagination";
+import OrangeHeader from "../OrangeHeader";
 
 const List = ({ state }) => {
   // Get the data of the current list.
@@ -8,6 +9,7 @@ const List = ({ state }) => {
 
   return (
     <Container>
+      <OrangeHeader subTitle={`Our`} title={`Latest News`} />
       {/* If the list is a taxonomy, we render a title. */}
       {data.isTaxonomy && (
         <Header>
