@@ -811,7 +811,7 @@ const Content = styled.div`
         font-size: 6em;
         color: rgb(237, 83, 43, 0.1);
           @media (max-width: 768px) {
-            top: 0;
+            top: 0.2em;
           }
       }
     }
