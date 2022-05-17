@@ -31,6 +31,14 @@ const settings = {
         }
       }
     },
+    {
+      name: "@frontity/google-analytics",
+      state: {
+        googleAnalytics: {
+          trackingId: "315556641",
+        },
+      },
+    },
     "@frontity/tiny-router",
     "@frontity/html2react",
     "@aamodtgroup/frontity-contact-form-7"
