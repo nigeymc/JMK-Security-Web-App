@@ -31,6 +31,14 @@ const settings = {
         }
       }
     },
+    {
+      name: "@frontity/google-tag-manager-analytics",
+      state: {
+        googleTagManagerAnalytics: {
+          containerId: "GTM-TT37TRD",
+        },
+      },
+    },
     "@frontity/tiny-router",
     "@frontity/html2react",
     "@aamodtgroup/frontity-contact-form-7"
