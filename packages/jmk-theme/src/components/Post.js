@@ -40,7 +40,7 @@ const Post = ({ state, actions, libraries }) => {
 
   const urlArr = data.link.split("/");
   const breadcrumbsArr = urlArr.filter(e => e);
-  const [level1] = breadcrumbsArr;
+  const [level1, level2] = breadcrumbsArr;
 
   /**
    * Once the post has loaded in the DOM, prefetch both the
