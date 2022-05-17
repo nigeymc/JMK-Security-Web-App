@@ -8,3 +8,5 @@
 
 User-agent: *
 Allow: /
+
+Sitemap: https://wp.jmksecurity.net/sitemap.xml
