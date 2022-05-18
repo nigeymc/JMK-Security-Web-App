@@ -27,6 +27,7 @@
     "bootstrap": "^5.1.3",
     "frontity": "^1.17.1",
     "jmk-theme": "file:packages/jmk-theme",
+    "react-cookie-consent": "^7.4.1",
     "react-google-recaptcha": "^2.1.0",
     "react-icons": "^4.3.1",
     "react-share": "^4.4.0",

@@ -4,6 +4,7 @@ import Switch from "@frontity/components/switch";
 import List from "./list";
 import Post from "./Post";
 import Sticky from 'react-stickky';
+import CookieConsent from "react-cookie-consent";
 
 // Components
 import Loading from "./Loading";
@@ -109,6 +110,7 @@ const Theme = ({ state }) => {
           <FooterAddress />
           <FooterServices />
         </FooterContainer>
+        <CookieConsent style={{ background: "#ED532B" }} buttonStyle={{ background: "#334050", color: "#fff", fontSize: "13px" }} buttonText="I accept">This website uses cookies to enhance the user experience.</CookieConsent>
       </div>
 
       {/* Add the main section. It renders a different component depending
