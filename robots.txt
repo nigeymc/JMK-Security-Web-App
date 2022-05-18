@@ -9,4 +9,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://wp.jmksecurity.net/sitemap.xml
+Sitemap: https://wp.jmksecurity.net/wp-sitemap.xml

@@ -58,6 +58,7 @@ const Theme = ({ state }) => {
       {/* Add some metatags to the <head> of the HTML. */}
       <Title />
       <Head>
+        <meta name="google-site-verification" content="7y_BdurSOYhC1SPHsg68bsHfGp15-B97Ov5wHCpm7Io" />
         <meta charset="UTF-8"></meta>
         <meta name="description" content={state.frontity.description} />
         <meta name="keywords" content="CCTV, security, Ireland, Northern Ireland, Tyrone, domestic cctv, commercial cctv, home cctv, cctv site rental, intruder systems, access control systems, electrical services, cctv installations, ANPR systmes, construction site security" />
