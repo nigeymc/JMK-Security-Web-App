@@ -308,7 +308,7 @@ const Content = styled.div`
       left: -9px;
     }
 
-    .number-820:before {
+    .tel-467:before {
       content: "";
       width: 193px;
       background-color: #334050;
