@@ -61,7 +61,7 @@ const Theme = ({ state }) => {
         <meta name="google-site-verification" content="7y_BdurSOYhC1SPHsg68bsHfGp15-B97Ov5wHCpm7Io" />
         <meta charset="UTF-8"></meta>
         <meta name="description" content={state.frontity.description} />
-        <meta name="keywords" content="CCTV, security, Ireland, Northern Ireland, Tyrone, domestic cctv, commercial cctv, home cctv, cctv site rental, intruder systems, access control systems, electrical services, cctv installations, ANPR systmes, construction site security" />
+        <meta name="keywords" content="Ireland, Northern Ireland, Tyrone, domestic, commercial, home, cctv site rental, intruder systems, access control, CCTV, security, ANPR, systems, installations, installers, electrical services, construction site CCTV, solar powered CCTV, construction site security" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0"></meta>
         <meta property="og:type" content="website" />
         <meta property={state.frontity.description} />
