@@ -466,10 +466,6 @@ a[href^=tel] {
   background: none;
 }
 
-.pattern-bg {
-  background: #f5f5f5 url(../images/crossword.png);
-}
-
 a[href^=tel] {
   color: inherit;
   text-decoration: none;

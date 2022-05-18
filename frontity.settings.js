@@ -4,7 +4,7 @@ const settings = {
     "frontity": {
       "url": "https://jmksecurity.net/",
       "title": "JMK Security",
-      "description": "Bespoke security systems that protect your people, processes and assets."
+      "description": "Tyrone's leading Security & CCTV Specialists in designing & fitting bespoke security & CCTV systems that protect Ireland's homes, businesses & assets."
     }
   },
   "packages": [
