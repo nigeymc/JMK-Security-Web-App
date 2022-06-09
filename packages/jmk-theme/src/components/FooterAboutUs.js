@@ -8,10 +8,11 @@ const FooterAboutUs = ({ state }) => {
   const items = state.source.get(`/menu/${state.theme.socialMenuUrl}`).items;
 
   return (
-    <FooterWidget className="col-lg-4 col-md-6 footer-widget">
+    <FooterWidget className="col-lg-4 col-md-12">
       <h3 className="widget-title">About Us</h3>
       <img loading="lazy" className="footer-logo" src="http://wp.jmksecurity.net/wp-content/uploads/2022/04/JMK_security_logo_db.svg" alt="JMK Security Logo" />
-      <p>Bespoke security systems that <br />protect your people, processes, and assets.</p>
+      <p>Tyrone's leading security and CCTV systems specialists in designing & fitting
+        bespoke security & cctv systems that protect Ireland's homes, businesses & assets.</p>
       <div className="footer-social">
         <SocialIconsContainer />
       </div>
@@ -22,6 +23,7 @@ const FooterAboutUs = ({ state }) => {
 export default connect(FooterAboutUs);
 
 const FooterWidget = styled.div`
+  padding-right: 40px;
 
 .widget-title {
     font-size: 16px;

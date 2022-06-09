@@ -8,7 +8,7 @@ const FooterServices = ({ state }) => {
     const [, services, , , ,] = items;
 
     return (
-        <FooterWidget className="col-lg-4 col-md-6 mt-5 mt-lg-0 footer-widget">
+        <FooterWidget className="col-lg-4 col-md-12 mt-5 mt-lg-0">
             <h3 className="widget-title">Our Services</h3>
             <ul className="list-arrow">
                 {services.child_items.map((service) => <li key={service.ID}><Link title={service.title} link={service.url}><FaAngleRight />{service.title}</Link></li>)}

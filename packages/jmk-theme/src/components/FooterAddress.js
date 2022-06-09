@@ -4,7 +4,7 @@ import { styled } from "frontity";
 const FooterAddress = () => {
 
     return (
-        <FooterWidget className="col-lg-4 col-md-6 mt-5 mt-md-0 footer-widget">
+        <FooterWidget className="col-lg-4 col-md-12 mt-5 mt-lg-0">
             <h3 className="widget-title">Find Us</h3>
             <address>
                 Sedennan, <br />Loughmuck Road, <br />Omagh, Co.Tyrone <br />BT78 1SE

@@ -4,7 +4,7 @@ const settings = {
     "frontity": {
       "url": "https://jmksecurity.net/",
       "title": "JMK Security",
-      "description": "Tyrone's leading Security & CCTV Specialists in designing & fitting bespoke security & CCTV systems that protect Ireland's homes, businesses & assets."
+      "description": "JMK SECURITY ARE TYRONE'S LEADING SECURITY & CCTV SYSTEMS SPECIALISTS IN DESIGN & INSTALLATION OF BESPOKE SECURITY & CCTV SYSTEMS THAT PROTECT HOMES, BUSINESSES & ASSETS ALL OVER IRELAND, NORTH AND SOUTH, COUNTRYWIDE. WE SPECIALISE IN CCTV TOWER HIRE AND WE ARE EXPERTS IN DOMESTIC AND COMMERCIAL CCTV SECURITY SYSTEMS INSTALLATION THROUGHOUT IRELAND AND THE UK. WE ALSO COMPLETE A WIDE VARIETY OF ELECTRICAL INSTALLATIONS AS A NICEIC APPROVED ELECTRICAL CONTRACTOR."
     }
   },
   "packages": [
