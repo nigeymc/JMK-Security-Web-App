@@ -862,6 +862,7 @@ const Content = styled.div`
       .accreditation-icons {
         text-align: center;
         align-items: center;
+        justify-content: center;
 
           @media (max-width: 768px) {
             flex-wrap: wrap;
