@@ -114,7 +114,7 @@ const Theme = ({ state }) => {
       </div>
 
       {/* Add the main section. It renders a different component depending
-      on the type of URL we are in. */}
+      on the type of URL we are in.*/}
 
     </>
   );
