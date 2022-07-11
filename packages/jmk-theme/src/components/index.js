@@ -71,6 +71,16 @@ const Theme = ({ state }) => {
         <html lang="en" />
         <meta name="robots" />
         <meta name="googlebot" />
+
+        <script>
+          {`
+        const consentGranted = () => {
+        gtag('consent', 'update', {
+            'analytics_storage': 'granted'
+        });
+        }
+          `}
+        </script>
       </Head>
 
       {/* Add some global styles for the whole site, like body or a's. 
