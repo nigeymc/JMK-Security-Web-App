@@ -62,7 +62,7 @@ const Theme = ({ state }) => {
         <meta name="google-site-verification" content="7y_BdurSOYhC1SPHsg68bsHfGp15-B97Ov5wHCpm7Io" />
         <meta charset="UTF-8"></meta>
         <meta name="description" content={state.frontity.description} />
-        <meta name="keywords" content="Ireland, Northern Ireland, Tyrone, domestic, commercial, home, cctv site rental, intruder systems, access control, CCTV, security, ANPR, systems, installations, installers, electrical services, construction site CCTV, solar powered CCTV, construction site security" />
+        <meta name="keywords" content="CCTV installers Northern Ireland, CCTV installers Ireland, security, ANPR, systems installations, CCTV installers, electrical services, construction site CCTV, CCTV hire, solar powered CCTV, construction site security, Ireland CCTV, Northern Ireland CCTV, Tyrone CCTV, domestic CCTV, commercial CCTV, home CCTV, CCTV site rental, intruder alarm systems Northern Ireland, access control systems" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0"></meta>
         <meta property="og:type" content="website" />
         <meta property={state.frontity.description} />
@@ -71,15 +71,6 @@ const Theme = ({ state }) => {
         <html lang="en" />
         <meta name="robots" />
         <meta name="googlebot" />
-
-        <script>{`
-          function consentGranted() {
-            console.log('yes set');
-            gtag('consent', 'update', {
-              'analytics_storage': 'granted'
-            });
-          }`}
-        </script>
       </Head>
 
       {/* Add some global styles for the whole site, like body or a's. 
@@ -119,7 +110,7 @@ const Theme = ({ state }) => {
           <FooterAddress />
           <FooterServices />
         </FooterContainer>
-        <CookieConsent style={{ background: "#ED532B" }} buttonStyle={{ background: "#334050", color: "#fff", fontSize: "13px" }} buttonText="I accept" onAccept={() => { consentGranted() }}>This website uses cookies to enhance the user experience.</CookieConsent>
+        <CookieConsent style={{ background: "#ED532B" }} buttonStyle={{ background: "#334050", color: "#fff", fontSize: "13px" }} buttonText="Accept & continue" onAccept={() => { consentGranted() }}>We use essential cookies to enhance your online experience. By clicking "Accept & continue", you agree to our use of cookies categorised by 'Analytics'.</CookieConsent>
       </div>
 
       {/* Add the main section. It renders a different component depending
