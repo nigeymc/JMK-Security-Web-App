@@ -85,6 +85,16 @@ const Theme = ({ state }) => {
             `}
         </script>
 
+        <script>
+          {`
+          function consentGranted() {
+            gtag('consent', 'update', {
+                'analytics_storage': 'granted'
+            });
+          }
+          `}
+        </script>
+
       </Head>
 
       {/* Add some global styles for the whole site, like body or a's. 
