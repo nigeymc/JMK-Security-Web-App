@@ -71,16 +71,20 @@ const Theme = ({ state }) => {
         <html lang="en" />
         <meta name="robots" />
         <meta name="googlebot" />
-
         <script>
           {`
-        const consentGranted = () => {
-        gtag('consent', 'update', {
-            'analytics_storage': 'granted'
-        });
-        }
-          `}
+            // Define dataLayer and the gtag function.
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+
+            // Default analytics_storage to 'denied' as a placeholder
+            // Determine actual values based on your own requirements
+            gtag('consent', 'default', {
+                'analytics_storage': 'denied'
+            });
+            `}
         </script>
+
       </Head>
 
       {/* Add some global styles for the whole site, like body or a's. 
