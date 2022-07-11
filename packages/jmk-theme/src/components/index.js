@@ -71,6 +71,15 @@ const Theme = ({ state }) => {
         <html lang="en" />
         <meta name="robots" />
         <meta name="googlebot" />
+
+        <script>{`
+          function consentGranted() {
+            console.log('yes set');
+            gtag('consent', 'update', {
+              'analytics_storage': 'granted'
+            });
+          }`}
+        </script>
       </Head>
 
       {/* Add some global styles for the whole site, like body or a's. 
@@ -110,7 +119,7 @@ const Theme = ({ state }) => {
           <FooterAddress />
           <FooterServices />
         </FooterContainer>
-        <CookieConsent style={{ background: "#ED532B" }} buttonStyle={{ background: "#334050", color: "#fff", fontSize: "13px" }} buttonText="I accept">This website uses cookies to enhance the user experience.</CookieConsent>
+        <CookieConsent style={{ background: "#ED532B" }} buttonStyle={{ background: "#334050", color: "#fff", fontSize: "13px" }} buttonText="I accept" onAccept={() => { consentGranted() }}>This website uses cookies to enhance the user experience.</CookieConsent>
       </div>
 
       {/* Add the main section. It renders a different component depending
