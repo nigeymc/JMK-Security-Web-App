@@ -20,8 +20,7 @@ import FooterContainer from './FooterContainer';
 import FooterAboutUs from './FooterAboutUs';
 import FooterAddress from './FooterAddress';
 import FooterServices from './FooterServices';
-import HeroBanner from './HeroBanner';
-import SubPageHeader from './SubPageHeader';
+import DisplayBanner from './DisplayBanner';
 
 /**
  * Theme is the root React component of our theme. The one we will export
@@ -36,23 +35,6 @@ const Theme = ({ state }) => {
   // Get information about the current URL.
   const data = state.source.get(state.router.link);
 
-  const getRndInteger = (min, max) => {
-    return Math.floor(Math.random() * (max - min)) + min;
-  }
-
-  let headerImage;
-  let electricalServicesImg = 'http://wp.jmksecurity.net/wp-content/uploads/2022/03/sub-header4.jpg';
-  let rentalImg = 'https://wp.jmksecurity.net/wp-content/uploads/2022/02/towers_banner_no_logo.png';
-
-  switch (getRndInteger(0, 3)) {
-    case 0: headerImage = 'http://wp.jmksecurity.net/wp-content/uploads/2022/03/sub-header1.jpg'
-      break;
-    case 1: headerImage = 'http://wp.jmksecurity.net/wp-content/uploads/2022/03/sub-header2.jpg'
-      break;
-    case 2: headerImage = 'http://wp.jmksecurity.net/wp-content/uploads/2022/03/sub-header3.jpg'
-      break;
-    default:
-  }
 
   return (
     <>
@@ -62,7 +44,7 @@ const Theme = ({ state }) => {
         <meta name="google-site-verification" content="7y_BdurSOYhC1SPHsg68bsHfGp15-B97Ov5wHCpm7Io" />
         <meta charset="UTF-8"></meta>
         <meta name="description" content={state.frontity.description} />
-        <meta name="keywords" content="CCTV installers Northern Ireland, CCTV installers Ireland, security, ANPR, systems installations, CCTV installers, electrical services, construction site CCTV, CCTV hire, solar powered CCTV, construction site security, Ireland CCTV, Northern Ireland CCTV, Tyrone CCTV, domestic CCTV, commercial CCTV, home CCTV, CCTV site rental, intruder alarm systems Northern Ireland, access control systems" />
+        <meta name="keywords" content="security CCTV specialists Northern Ireland, security CCTV specialists Ireland, security CCTV specialists Tyrone, CCTV installers Northern Ireland, CCTV installers Ireland, security, ANPR, systems installations, CCTV installers, electrical services, construction site CCTV, CCTV hire, solar powered CCTV, construction site security, Ireland CCTV, Northern Ireland CCTV, Tyrone CCTV, domestic CCTV, commercial CCTV, home CCTV, CCTV site rental, intruder alarm systems Northern Ireland, access control systems" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0"></meta>
         <meta property="og:type" content="website" />
         <meta property={state.frontity.description} />
@@ -114,10 +96,7 @@ const Theme = ({ state }) => {
           </HeaderComponent>
           <Nav />
         </Sticky>
-        {data.isHome && <HeroBanner image={`https://wp.jmksecurity.net/wp-content/uploads/2022/02/omagh-banner.jpeg`} />}
-        {!data.isHome && !data.isPostArchive && !data.link.includes('/news') && data.route !== '/electrical-services/' && data.route !== '/cctv-site-and-rental/' && <SubPageHeader image={headerImage} />}
-        {data.route === '/electrical-services/' && <SubPageHeader image={electricalServicesImg} />}
-        {data.route === '/cctv-site-and-rental/' && <SubPageHeader image={rentalImg} />}
+        <DisplayBanner />
 
         {/* Add the main section. It renders a different component depending
       on the type of URL we are in. */}
