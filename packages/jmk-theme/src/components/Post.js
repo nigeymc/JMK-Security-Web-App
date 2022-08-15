@@ -160,6 +160,10 @@ const Content = styled.div`
   display: flex;
   flex-flow: column;
 
+  .wp-container-34 {
+    padding-right: 15px;
+  }
+
   ul {
     padding-left: 25px;
 
@@ -644,27 +648,35 @@ const Content = styled.div`
           padding: 45px 15px 25px;
         }
 
-        .wp-block-buttons {
-          margin-left: 15px;
+        figure {
+          margin: 24px auto 15px;
+        }
+
+        .hp-video {
+          padding-right: 25px;
+        }
+
+        .banner {
+          min-height: 350px;
         }
       
       @media (max-width: 992px) {
         flex-flow: column;
 
           .banner {
-            order: 1;
+            order: 2;
             background-position: center;
           }
 
           div:not(.banner) {
-            order: 2;
+            order: 1;
+          }
+
+          .hp-video {
+            padding-right: 0;
           }
       }
 
-      .banner {
-        min-height: 350px;
-        background-color: #334050;
-      }
     }
 
     p {
