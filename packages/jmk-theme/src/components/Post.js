@@ -266,7 +266,7 @@ const Content = styled.div`
       background-color: #334050;
     }
 
-    input[name="number-820"] {
+    input[name="tel-467"] {
       padding-left: 200px;
     }
 
