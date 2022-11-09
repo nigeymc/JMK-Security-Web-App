@@ -6,7 +6,6 @@ import FeaturedMedia from "./featured-media";
 import socialSharingComponent from "./socialSharingComponent";
 import SocialSharingComponent from "./socialSharingComponent";
 
-
 /**
  * The Post component that Mars uses to render any kind of "post type", like
  * posts, pages, attachments, etc.
@@ -39,7 +38,7 @@ const Post = ({ state, actions, libraries }) => {
   const Html2React = libraries.html2react.Component;
 
   const urlArr = data.link.split("/");
-  const breadcrumbsArr = urlArr.filter(e => e);
+  const breadcrumbsArr = urlArr.filter((e) => e);
   const [level1, level2] = breadcrumbsArr;
 
   /**
@@ -59,7 +58,9 @@ const Post = ({ state, actions, libraries }) => {
         {/* Hide author and date on pages */}
         {!data.isPage && (
           <div>
-            <StyledLink link={`/${level1}`}><b>{`< Go Back to News`}</b></StyledLink>
+            <StyledLink link={`/${level1}`}>
+              <b>{`< Go Back to News`}</b>
+            </StyledLink>
             <Title dangerouslySetInnerHTML={{ __html: post.title.rendered }} />
             {author && (
               <StyledLink link={author.link}>
@@ -72,7 +73,11 @@ const Post = ({ state, actions, libraries }) => {
               {" "}
               on <b>{date.toDateString()}</b>
             </DateWrapper>
-            <SocialSharingComponent url={`https://jmksecurity.net${data.link}`} size={32} round={true} />
+            <SocialSharingComponent
+              url={`https://jmksecurity.net${data.link}`}
+              size={32}
+              round={true}
+            />
           </div>
         )}
       </>
@@ -109,16 +114,16 @@ const Container = styled.div`
   margin: 0;
   padding: 24px;
 
-    .featured-image {
-      max-width: 600px;
-      width: 100%;
-      margin: 16px auto;
+  .featured-image {
+    max-width: 600px;
+    width: 100%;
+    margin: 16px auto;
 
-       div {
-        margin-top: unset;
-        height: unset;
-       }
+    div {
+      margin-top: unset;
+      height: unset;
     }
+  }
 `;
 
 const Title = styled.h1`
@@ -220,6 +225,7 @@ const Content = styled.div`
       text-transform: uppercase;
       font-weight: 900;
       font-family: 'Montserrat',sans-serif;
+      position: relative;
     }
 
     input, textarea {
@@ -268,6 +274,11 @@ const Content = styled.div`
       padding-left: 142px;
     }
 
+    input:focus-visible, textarea:focus-visible {
+      outline: solid 1px #ED532B;
+      border: solid 1px #ED532B;
+    }
+
     textarea[name="your-message"] {
       padding-left: 10px;
       padding-top: 40px;
@@ -290,59 +301,36 @@ const Content = styled.div`
       }
     }
 
-    .your-name:before {
+    .your-name:before, .your-email:before, .tel-467:before, .your-subject:before, .your-message:before {
       content: "";
-      width: 114px;
       background-color: #334050;
-      top: -31px;
+      top: -2px;
       z-index: -1;
       position: absolute;
-      height: 31px;
+      height: 31.5px;
       left: -9px;
+    }
+
+    .your-name:before {
+      width: 114px;
     }
 
     .your-email:before {
-      content: "";
       width: 114px;
-      background-color: #334050;
-      top: -31px;
-      z-index: -1;
-      position: absolute;
-      height: 31px;
-      left: -9px;
     }
 
     .tel-467:before {
-      content: "";
       width: 193px;
-      background-color: #334050;
-      top: -31px;
-      z-index: -1;
-      position: absolute;
-      height: 31px;
-      left: -9px;
     }
 
     .your-subject:before {
-      content: "";
       width: 134px;
-      background-color: #334050;
-      top: -31px;
-      z-index: -1;
-      position: absolute;
-      height: 31px;
-      left: -9px;
+      top: -3px;
     }
 
     .your-message:before {
-      content: "";
       width: 140px;
-      background-color: #334050;
-      top: -31px;
-      z-index: -1;
-      position: absolute;
-      height: 31px;
-      left: -9px;
+      top: -3px;
     }
 
   }
