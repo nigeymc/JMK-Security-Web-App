@@ -5,6 +5,7 @@ import List from "./list";
 import FeaturedMedia from "./featured-media";
 import socialSharingComponent from "./socialSharingComponent";
 import SocialSharingComponent from "./socialSharingComponent";
+import { BsFillArrowLeftCircleFill } from "react-icons/fa";
 
 /**
  * The Post component that Mars uses to render any kind of "post type", like
@@ -59,7 +60,8 @@ const Post = ({ state, actions, libraries }) => {
         {!data.isPage && (
           <div>
             <StyledLink link={`/${level1}`}>
-              <b>{`< Go Back to News`}</b>
+              <span></span>
+              <strong>{` Go Back to News`}</strong>
             </StyledLink>
             <Title dangerouslySetInnerHTML={{ __html: post.title.rendered }} />
             {author && (
@@ -80,14 +82,13 @@ const Post = ({ state, actions, libraries }) => {
             />
           </div>
         )}
+        {/* Look at the settings to see if we should include the featured image */}
+        {!data.isPage && state.theme.featured.showOnPost && (
+          <div className="featured-image">
+            <FeaturedMedia id={post.featured_media} />
+          </div>
+        )}
       </>
-
-      {/* Look at the settings to see if we should include the featured image */}
-      {state.theme.featured.showOnPost && (
-        <div className="featured-image">
-          <FeaturedMedia id={post.featured_media} />
-        </div>
-      )}
 
       {data.isAttachment ? (
         // If the post is an attachment, just render the description property,
@@ -112,7 +113,11 @@ const Container = styled.div`
   max-width: 1250px;
   width: 100%;
   margin: 0;
-  padding: 24px;
+  padding: 24px 0;
+
+  @media (max-width: 992px) {
+    padding: 24px 25px;
+  }
 
   .featured-image {
     max-width: 600px;
@@ -135,9 +140,22 @@ const Title = styled.h1`
 
 const StyledLink = styled(Link)`
   padding: 15px 0;
+  color: rgba(12, 17, 43, 0.9);
+  border-bottom: solid 1px gba(12, 17, 43);
 
   &:hover {
     color: rgba(12, 17, 43, 0.9);
+  }
+  display: flex;
+  justify-content: space-between;
+  width: 170px;
+
+  span {
+    background-image: url("data:image/svg+xml,%3Csvg stroke='currentColor' fill='rgba(12, 17, 43, 0.9)' stroke-width='0' viewBox='0 0 16 16' height='1em' width='1em' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M8 0a8 8 0 1 0 0 16A8 8 0 0 0 8 0zm3.5 7.5a.5.5 0 0 1 0 1H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H11.5z'%3E%3C/path%3E%3C/svg%3E");
+    width: 30px;
+    height: 30px;
+    display: inline-block;
+    background-size: contain;
   }
 `;
 
@@ -165,8 +183,34 @@ const Content = styled.div`
   display: flex;
   flex-flow: column;
 
+  div&:first-of-type {
+    margin-top: -100px;
+  }
+
+  .contact-wrapper {
+    margin-top: 100px !important;
+  }
+
   .wp-container-34 {
     padding-right: 15px;
+  }
+
+  ol {
+    padding-left: 25px;
+
+      li {
+        line-height: 1.6em;
+        font-size: 1.2em;
+        font-weight: 500;
+        margin-bottom: 15px;
+        position: relative;
+      }
+  }
+
+  a:not(.wp-block-button__link) {
+    color: inherit;
+    text-decoration: underline;
+    font-weight: bold;
   }
 
   ul {
@@ -583,9 +627,6 @@ const Content = styled.div`
             }
         }
 
-      h4 {
-        padding-left: 25px;
-      }
     }
 
     .intruder-alarms {
@@ -670,11 +711,15 @@ const Content = styled.div`
     p {
       line-height: 1.6em;
       font-size: 1.2em;
-      padding: 0 25px;
+      padding: 0;
         @media (max-width: 991px) {
           padding: 0;
         }
       font-weight: 500;
+    }
+
+    .services-sub-page .image-wrapper {
+      margin-right: 25px
     }
 
     img {
@@ -829,6 +874,7 @@ const Content = styled.div`
       font-style: italic;
       text-align: center;
       border-left: solid 10px rgb(237, 83, 43, 0.7);
+      margin-top: 100px!important;
       
       &:before {
         content: "“";
@@ -900,7 +946,7 @@ const Content = styled.div`
     }
 
     .main-content {
-      padding: 25px;
+      padding: 25px 0;
       display: flex;
       flex-wrap: wrap;
       margin-right: -15px;

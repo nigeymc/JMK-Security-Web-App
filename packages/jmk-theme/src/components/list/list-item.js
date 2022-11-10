@@ -60,11 +60,15 @@ const Article = styled.article`
 `;
 
 const Title = styled.h1`
-  color: #ED532B;
+  color: #ed532b;
   font-weight: 900;
   text-transform: uppercase;
   font-size: 32px;
   line-height: normal;
+
+  &:hover {
+    color: #334050;
+  }
 `;
 
 const AuthorName = styled.span`
@@ -84,4 +88,11 @@ const PublishDate = styled.span`
 const Excerpt = styled.div`
   line-height: 1.6em;
   color: rgba(12, 17, 43, 0.8);
+
+  p {
+    line-height: 1.6em;
+    font-size: 1.2em;
+    padding: 0;
+    font-weight: 500;
+  }
 `;
