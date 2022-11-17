@@ -1,6 +1,8 @@
 import { connect, styled } from "frontity";
 import Link from "../Link";
 import FeaturedMedia from "../featured-media";
+import Categories from "../Categories";
+import { Row } from "reactstrap";
 
 /**
  * Item Component
@@ -10,9 +12,11 @@ import FeaturedMedia from "../featured-media";
  * - Author: name of author and published date
  * - FeaturedMedia: the featured image/video of the post
  */
-const Item = ({ state, item }) => {
+const Item = ({ state, item, categories }) => {
   const author = state.source.author[item.author];
   const date = new Date(item.date);
+  const [company, industry] = categories;
+  const postCategories = item.categories;
 
   return (
     <Article>
@@ -21,27 +25,42 @@ const Item = ({ state, item }) => {
       </Link>
 
       <div>
-        {/* If the post has an author, we render a clickable author text. */}
-        {author && (
-          <StyledLink link={author.link}>
+        {Object.values(postCategories).map((item) => {
+          if (JSON.stringify(item).includes(company[0])) {
+            return (
+              company !== undefined && (
+                <Categories key={company[0]} category={company[1]} />
+              )
+            );
+          } else if (JSON.stringify(item).includes(industry[0])) {
+            return (
+              company !== undefined && (
+                <Categories key={industry[0]} category={industry[1]} />
+              )
+            );
+          }
+        })}
+
+        <div>
+          {/* If the post has an author, we render a clickable author text. */}
+          {author && (
             <AuthorName>
               By <b>{author.name}</b>
             </AuthorName>
-          </StyledLink>
-        )}
-        <PublishDate>
-          {" "}
-          on <b>{date.toDateString()}</b>
-        </PublishDate>
+          )}
+          <PublishDate>
+            {" "}
+            on <b>{date.toDateString()}</b>
+          </PublishDate>
+        </div>
       </div>
-
       {/*
        * If the want to show featured media in the
        * list of featured posts, we render the media.
        */}
       {/* state.theme.featured.showOnList && (
         <FeaturedMedia id={item.featured_media} />
-      ) */}
+      ) }
 
       {/* If the post has an excerpt (short summary text), we render it */}
       {item.excerpt && (

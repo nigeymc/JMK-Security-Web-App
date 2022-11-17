@@ -28,8 +28,14 @@ const List = ({ state }) => {
       {/* Iterate over the items of the list. */}
       {data.items.map(({ type, id }) => {
         const item = state.source[type][id];
+        const allCategories = state.source.category;
+
+        const CategoriesList = Object.values(allCategories).map((item) => {
+          return [item.id, item.name];
+        });
+
         // Render one Item component for each one.
-        return <Item key={item.id} item={item} />;
+        return <Item key={item.id} item={item} categories={CategoriesList} />;
       })}
       <Pagination />
     </Container>
