@@ -100,7 +100,7 @@ const Theme = ({ state }) => {
           t.src=v;s=b.getElementsByTagName(e)[0];
           s.parentNode.insertBefore(t,s)}(window, document,'script',
           'https://connect.facebook.net/en_US/fbevents.js');
-          fbq('init', '679499023748454');
+          fbq('init', '514310700611515');
           fbq('track', 'PageView');`}
         </script>
         <noscript>
@@ -108,7 +108,7 @@ const Theme = ({ state }) => {
             height="1"
             width="1"
             style="display:none"
-            src="https://www.facebook.com/tr?id=679499023748454&ev=PageView&noscript=1"
+            src="https://www.facebook.com/tr?id=514310700611515&ev=PageView&noscript=1"
           />`}
         </noscript>
       </Head>
