@@ -4,6 +4,7 @@ import { Container } from "reactstrap";
 
 const HeroBanner = ({ state, image }) => {
   const description = state.source.get(state.frontity.description);
+  console.log(description.route);
 
   const banner = css`
     background: url(${image});
@@ -35,12 +36,12 @@ const HeroBanner = ({ state, image }) => {
       <Container fluid>
         <H1>
           <span className="subHeader">
-            We design and install cost-effective premium bespoke security
-            solutions
+            We design and install cost-effective premium bespoke electronic
+            security solutions
           </span>
           <span className="mainHeader">
-            Security & CCTV systems that protect Ireland's homes, businesses and
-            assets.
+            Electronic security systems that protect Ireland's homes, businesses
+            and assets.
           </span>
         </H1>
       </Container>
