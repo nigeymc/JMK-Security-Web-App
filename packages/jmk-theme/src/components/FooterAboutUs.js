@@ -1,12 +1,8 @@
 import React from "react";
 import { connect, styled } from "frontity";
-import Link from "./Link";
 import SocialIconsContainer from "./SocialIconsContainer";
-import { FaFacebookF, FaInstagram, FaLinkedin } from "react-icons/fa";
 
 const FooterAboutUs = ({ state }) => {
-  const items = state.source.get(`/menu/${state.theme.socialMenuUrl}`).items;
-
   return (
     <FooterWidget className="col-lg-4 col-md-12">
       <h3 className="widget-title">About Us</h3>
