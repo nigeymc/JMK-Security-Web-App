@@ -1,5 +1,6 @@
 import { styled, connect, useConnect, decode } from "frontity";
 import Link from "./Link";
+import SidePanel from "./SidePanel";
 
 /**
  * The modal containing the mobile menu items.
@@ -21,27 +22,60 @@ const MenuModal = ({ ...props }) => {
 
   return (
     <div {...props}>
-      {state.frontity.mode !== "amp" && <MenuOverlay />}
-      <MenuContent as="nav">
-        <ul>
-          {<li className="nav-item dropdown">
-            <MenuLink link={home.url} aria-current={data.isHome ? "page" : null}>{home.title}</MenuLink></li>
-          }
-          {isThereLinks && newMenu.map((item) =>
-            <li key={item.ID}>
-              <MenuLink key={item.ID} link={item.url} aria-current={state.router.link.includes(item.slug) ? "page" : null}>{item.title}</MenuLink>
-              {item.child_items ?
-                <ul className="sub">
-                  {item.child_items ? item.child_items.map((childItem) => {
-                    return (
-                      <li key={childItem.ID}><MenuLink key={childItem.ID} link={childItem.url} aria-current={state.router.link.includes(childItem.slug) ? "page" : null}>{childItem.title}</MenuLink></li>
-                    )
-                  }) : null}
-                </ul> : null}
-            </li>
-          )}
-        </ul>
-      </MenuContent>
+      {/*state.frontity.mode !== "amp" && <MenuOverlay /> */}
+      <SidePanel toggleMedium={toggleMedium}>
+        <MenuContent as="nav">
+          <ul>
+            {
+              <li className="nav-item dropdown">
+                <MenuLink
+                  link={home.url}
+                  aria-current={data.isHome ? "page" : null}
+                >
+                  {home.title}
+                </MenuLink>
+              </li>
+            }
+            {isThereLinks &&
+              newMenu.map((item) => (
+                <li key={item.ID}>
+                  <MenuLink
+                    key={item.ID}
+                    link={item.url}
+                    aria-current={
+                      state.router.link.includes(item.slug) ? "page" : null
+                    }
+                  >
+                    {item.title}
+                  </MenuLink>
+                  {item.child_items ? (
+                    <ul className="sub">
+                      {item.child_items
+                        ? item.child_items.map((childItem) => {
+                            return (
+                              <li key={childItem.ID}>
+                                <MenuLink
+                                  key={childItem.ID}
+                                  link={childItem.url}
+                                  aria-current={
+                                    state.router.link.includes(childItem.slug)
+                                      ? "page"
+                                      : null
+                                  }
+                                >
+                                  {childItem.title}
+                                </MenuLink>
+                              </li>
+                            );
+                          })
+                        : null}
+                    </ul>
+                  ) : null}
+                </li>
+              ))}
+          </ul>
+        </MenuContent>
+      </SidePanel>
     </div>
   );
 };
@@ -71,7 +105,7 @@ const MenuContent = styled.div`
 
     /* styles for active link */
     [aria-current="page"] {
-      color: #ED532B !important;
+      color: #ed532b !important;
       background-color: rgba(0, 0, 0, 0.05);
       text-shadow: 1px 1px 1px #b5b5b5;
     }
@@ -96,7 +130,7 @@ const MenuLink = styled(Link)`
   font-weight: 700;
   line-height: normal;
   text-decoration: none;
-  letter-spacing: .3px;
+  letter-spacing: 0.3px;
   border-bottom: 1px solid #e5e5e5;
   color: #333333;
 
@@ -116,7 +150,7 @@ const MenuSubLink = styled(Link)`
   font-weight: 700;
   line-height: normal;
   text-decoration: none;
-  letter-spacing: .3px;
+  letter-spacing: 0.3px;
   color: #333333;
 
   &:hover,
@@ -125,7 +159,6 @@ const MenuSubLink = styled(Link)`
   }
   /* styles for active link */
   &[aria-current="page"] {
-    
   }
 `;
 

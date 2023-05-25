@@ -1,6 +1,6 @@
+import { useState } from "react";
 import { styled, connect, Global, Head } from "frontity";
-import { CloseIcon, HamburgerIcon } from "./Menu-Icon";
-import MenuModal from "./Menu-Modal";
+import SidePanel from "./SidePanel";
 
 /**
  * The menu that should be displayed on mobile devices displaying links to
@@ -11,71 +11,46 @@ import MenuModal from "./Menu-Modal";
  * @returns A React component.
  */
 function MobileMenu({ state, actions }) {
-  const { menuUrl, isMobileMenuOpen } = state.theme;
-  if (menuUrl.length === 0) return null;
+  const [sidebar, setSidebar] = useState(false);
+  const showSidebar = () => setSidebar(!sidebar);
+  let toggleMedium = sidebar ? `showMenu` : `hideMenu`;
 
-  return state.frontity.mode === "amp" ? (
-    <>
-      <Head>
-        <script
-          async={undefined}
-          custom-element="amp-bind"
-          src="https://cdn.ampproject.org/v0/amp-bind-0.1.js"
-        ></script>
-      </Head>
+  const openPanel = (e) => {
+    showSidebar();
+  };
 
-      <MenuToggle>
-        <HamburgerIcon
-          color="white"
-          size="2.2em"
-          role="button"
-          tabindex="0"
-          data-amp-bind-hidden="isMenuOpen"
-          on="tap:AMP.setState({ isMenuOpen: true })"
-        />
-        <CloseIcon
-          color="white"
-          size="2.2em"
-          role="button"
-          tabindex="0"
-          data-amp-bind-hidden="!isMenuOpen"
-          on="tap:AMP.setState({ isMenuOpen: false })"
-          hidden
-        />
-      </MenuToggle>
-      <MenuModal data-amp-bind-hidden="!isMenuOpen" hidden />
-    </>
-  ) : (
+  return (
     <>
-      <MenuToggle onClick={actions.theme.toggleMobileMenu}>
-        {isMobileMenuOpen ? (
-          <>
-            {/* Add some style to the body when menu is open,
-            to prevent body scroll */}
-            <Global styles={{ body: { overflowY: "hidden", height: "100vh" } }} />
-            <CloseIcon color="white" size="2.2em" />
-          </>
-        ) : (
-          <HamburgerIcon color="white" size="2.2em" />
-        )}
+      <MenuToggle onClick={openPanel}>
+        <input
+          type="checkbox"
+          className="hamburgerMenu"
+          onChange={showSidebar}
+          checked={sidebar && `unchecked`}
+          aria-hidden="true"
+        />
+        <div className="bars" role="button" aria-controls="mobileMenu">
+          <div className="bar"></div>
+          <div className="bar"></div>
+          <div className="bar"></div>
+        </div>
       </MenuToggle>
-      {/* If the menu is open, render the menu modal */}
-      {isMobileMenuOpen && <MenuModal />}
+      <SidePanel toggleMedium={toggleMedium} event={showSidebar} />
     </>
   );
 }
 
 const MenuToggle = styled.button`
-  position: absolute;
+  position: fixed;
   right: 24px;
-  top: 10px;
-  background: #23282d;
+  top: 90px;
+  background: #fff;
   border: 0;
-  color: white;
   z-index: 9999;
-  height: 50px;
-  width: 50px;
+  height: 40px;
+  width: 40px;
   display: none;
+  padding-top: 5px;
 
   @media (max-width: 991px) {
     display: flex;

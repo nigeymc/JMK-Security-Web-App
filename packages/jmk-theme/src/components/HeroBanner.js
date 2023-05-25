@@ -3,9 +3,6 @@ import { styled, css, connect } from "frontity";
 import { Container } from "reactstrap";
 
 const HeroBanner = ({ state, image }) => {
-  const description = state.source.get(state.frontity.description);
-  console.log(description.route);
-
   const banner = css`
     background: url(${image});
     background-repeat: no-repeat;
@@ -18,6 +15,7 @@ const HeroBanner = ({ state, image }) => {
       display: flex;
       justify-content: center;
       background-position: 25% 60%;
+      height: 570px;
     }
 
     &:after {
