@@ -4,7 +4,7 @@ import Nav from "./Nav";
 import MobileMenu from "./Menu";
 
 const Header = ({ state }) => {
-  const { items } = state.source.get('/menus/primary-menu');
+  const { items } = state.source.get("/menus/primary-menu");
   console.log(items);
   return (
     <>
