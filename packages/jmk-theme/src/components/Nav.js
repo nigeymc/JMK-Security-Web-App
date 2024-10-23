@@ -15,9 +15,9 @@ const Nav = ({ state }) => {
 
   const data = state.source.get(state.router.link);
 
-  const [home, services, parnters, projects, news, contact] = items;
+  const [home, services, parnters, projects, brochures, news, contact] = items;
 
-  const newMenu = [services, parnters, projects, news, contact];
+  const newMenu = [services, parnters, projects, brochures, news, contact];
 
   return (
     <SiteNavigation>
